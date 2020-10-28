@@ -1,10 +1,5 @@
 import React from "react";
 
-export default function Locations(){
-
-    return (
-        <div>
-            this is the locations page
-        </div>
-    )
+export default function Locations() {
+  return <div>this is the locations page</div>;
 }
