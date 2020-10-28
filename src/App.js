@@ -15,7 +15,6 @@ function App() {
       <Locations path="platser"/>
       <MovieDetails path="filmer"/>
       <SelectTickets path="satten"/>
-
     </Router>
   );
 }
