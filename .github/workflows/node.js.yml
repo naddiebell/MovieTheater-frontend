@@ -1,4 +1,4 @@
-name: testing
+name: Movie_Theater_frontend
 
 on:
   push:
