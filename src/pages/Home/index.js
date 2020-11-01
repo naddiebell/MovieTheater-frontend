@@ -1,5 +1,10 @@
 import React from "react";
+import Card from "../../Components/Card/Card";
 
 export default function HomePage() {
-  return <div>this is the home page</div>;
+  return (
+    <>
+      <Card />>
+    </>
+  );
 }
