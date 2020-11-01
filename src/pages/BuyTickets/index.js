@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function BuyTickets() {
+  const [displayTicket, setDisplayTicket] = useState(false);
+ 
+ function handleDisplay(e){
+   e.preventDefault();
+    setDisplayTicket(true);
+ } 
+ 
   return (
     <>
-      <form>
+      <form
+      onSubmit={(e)=>handleDisplay(e)}
+      >
         <label for="date">Välj ett datum:</label>
         <input type="date" id="date" name="date"></input>
 
@@ -23,27 +32,28 @@ export default function BuyTickets() {
         ></input>
 
         <input type="submit"
-
+        
         ></input>
       </form>
       <p>Alla filmer börjar kl. 7</p>
       <p>Betalning är endast kontant vid dörren</p>
       <p>Priset är 50 kr per biljett</p>
       <div className="background">
-    <div className="card">
-      <img
-      />
-      <div className="container">
-        <h4>
-          <b>Biljetter</b>
-        </h4>
-        <p>Bio</p>
-        <p>Datum</p>
-        <p>Antal</p>
-        <p>Skriv Ut</p>
+        {displayTicket && (
+          <div className="card">
+            <img />
+            <div className="container">
+              <h4>
+                <b>Biljetter</b>
+              </h4>
+              <p>Bio</p>
+              <p>Datum</p>
+              <p>Antal</p>
+              <p>Skriv Ut</p>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
-    </div>
     </>
   );
 }
