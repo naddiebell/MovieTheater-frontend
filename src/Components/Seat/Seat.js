@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 
 function Seat({ value, onClick }) {
-
   return (
-    <button className="square" onClick={onClick}>
+    <button className="square" onClick={onClick} type="button">
       {value}
     </button>
   );

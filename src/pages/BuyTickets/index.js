@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../../Components/Card/card.css";
 import "./style.css";
+import "../../SharedStyles/Button/button.css";
 import { useNavigate } from "@reach/router";
 
 export default function BuyTickets(props) {
@@ -53,7 +54,7 @@ export default function BuyTickets(props) {
         (element) => element.movieTitle === chooseFilm
       );
 
-      let { img } = aMovie[0];
+      const { img } = aMovie[0];
 
       const { movieTitle } = aMovie[0];
       const movieTimes = aMovie[0].time.map((element, index) => (

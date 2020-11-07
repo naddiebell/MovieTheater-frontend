@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./style.css";
 import Seat from "../../Components/Seat/Seat";
+import "../../SharedStyles/Button/button.css";
 
 export default function SelectSeats() {
   const [seatValue, setSeatValue] = useState(Array(25).fill(null));
+  const [displaySeat, setDisplaySeat] = useState(false);
 
   function renderSeat(i) {
     return (
@@ -19,53 +21,80 @@ export default function SelectSeats() {
             currentSeat[i] = null;
             setSeatValue(currentSeat);
           }
-
         }}
       />
     );
   }
 
+  function getSeats () {
+    let indexes = [];
+    let seats;
+    for(let i = 0; i < seatValue.length; i++) {
+      if (seatValue[i] === "X") {
+        seats = `Your selected seats are: ${i + 1}`;
+        
+      } else {
+        seats = "Choose a seat";
+      }
+    }
+    return seats;
+  }
+
+  const handleClick = () => {
+    console.log("clicked Seat Value", seatValue);
+    getSeats()
+    setDisplaySeat(true)
+  };
+
   return (
-    <div className="seatStyle">
-      <div className="board-row">
-        {renderSeat(0)}
-        {renderSeat(1)}
-        {renderSeat(2)}
-        {renderSeat(3)}
-        {renderSeat(4)}
-      </div>
+    <>
+      <div className="seatStyle">
+        <div className="board-row">
+          {renderSeat(0)}
+          {renderSeat(1)}
+          {renderSeat(2)}
+          {renderSeat(3)}
+          {renderSeat(4)}
+        </div>
 
-      <div className="board-row">
-        {renderSeat(5)}
-        {renderSeat(6)}
-        {renderSeat(7)}
-        {renderSeat(8)}
-        {renderSeat(9)}
-      </div>
+        <div className="board-row">
+          {renderSeat(5)}
+          {renderSeat(6)}
+          {renderSeat(7)}
+          {renderSeat(8)}
+          {renderSeat(9)}
+        </div>
 
-      <div className="board-row">
-        {renderSeat(10)}
-        {renderSeat(11)}
-        {renderSeat(12)}
-        {renderSeat(13)}
-        {renderSeat(14)}
-      </div>
+        <div className="board-row">
+          {renderSeat(10)}
+          {renderSeat(11)}
+          {renderSeat(12)}
+          {renderSeat(13)}
+          {renderSeat(14)}
+        </div>
 
-      <div className="board-row">
-        {renderSeat(15)}
-        {renderSeat(16)}
-        {renderSeat(17)}
-        {renderSeat(18)}
-        {renderSeat(19)}
-      </div>
+        <div className="board-row">
+          {renderSeat(15)}
+          {renderSeat(16)}
+          {renderSeat(17)}
+          {renderSeat(18)}
+          {renderSeat(19)}
+        </div>
 
-      <div className="board-row">
-        {renderSeat(20)}
-        {renderSeat(21)}
-        {renderSeat(22)}
-        {renderSeat(23)}
-        {renderSeat(24)}
+        <div className="board-row">
+          {renderSeat(20)}
+          {renderSeat(21)}
+          {renderSeat(22)}
+          {renderSeat(23)}
+          {renderSeat(24)}
+        </div>
       </div>
-    </div>
+      <button onClick={handleClick} type="button" className="myButton">
+        Select Seats
+      </button>
+      {displaySeat &&
+        <p>{getSeats()}</p>
+      }
+    </>
   );
 }
