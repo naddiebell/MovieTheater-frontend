@@ -1,10 +1,11 @@
 import React from "react";
-import Card from "../../Components/Card/Card";
+import MovieCarousel from "../../Components/Carousel/index"
 
-export default function HomePage() {
+export default function HomePage(props) {
+  const { movies } = props;
   return (
     <>
-      <Card />>
+      <MovieCarousel movies={movies} />
     </>
   );
 }

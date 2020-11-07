@@ -1,31 +1,30 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable func-names */
 /* eslint-disable no-console */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import "../../Components/Card/card.css";
 
-export default function BuyTickets() {
+export default function BuyTickets(props) {
   const [displayTicket, setDisplayTicket] = useState(false);
   const [date, setDate] = useState("YYYY-MM-DD");
   const [chooseFilm, setChooseFilm] = useState("-");
   const [chooseTicket, setChooseTicket] = useState("");
-  // const [data, setData] = useState({
-  //   filmName: "",
-  //   dateOfFilm: "YYYY-MM-DD",
-  //   seatAmount: "",
-  // });
+  const { movies } = props;
 
-  //const { filmName, dateOfFilm, seatAmount } = data;
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //   const result = await axios("/api/v1/tickets", {
-  //     manual: true,
-  //     data: { filmName, dateOfFilm, seatAmount },
-  //     method: "post",
-  //   });
-  //   setData(result.data);
-  // }, []
-  // );
+  const movieTitles = () => {
+    if (movies.length === 0) {
+      return;
+    }
+    // eslint-disable-next-line consistent-return
+    return movies.map((element, i) => {
+      return (
+        <option value={element.movieTitle} key={i}>
+          {element.movieTitle}
+        </option>
+      );
+    });
+  };
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
@@ -39,9 +38,22 @@ export default function BuyTickets() {
     setChooseTicket(e.target.value);
   };
 
+  const showTicket = () => {
+    if (date !== "YYYY-MM-DD" && chooseFilm !== "-" && chooseTicket) {
+      setDisplayTicket(true);
+      const aMovie = movies.filter(
+        (element) => element.movieTitle === chooseFilm
+      );
+      const movieTimes = aMovie[0].time;
+      console.log(movieTimes);
+      const filmDisplay = movieTimes.map((element) => <div>{element}</div>);
+      return filmDisplay;
+    }
+  };
+
   function handleDisplay(e) {
     e.preventDefault();
-    console.log(date, chooseFilm, chooseTicket);
+    showTicket();
     axios
       .post("http://localhost:5709/api/v1/tickets", {
         filmName: chooseFilm,
@@ -55,56 +67,78 @@ export default function BuyTickets() {
       .catch(function (error) {
         // handle error
         console.log(error);
-      })
-      .then(function () {
-        // always executed
       });
-    if (date !== "YYYY-MM-DD" && chooseFilm !== "-" && chooseTicket) {
-      setDisplayTicket(true);
-    }
   }
+
+  // const aMovie = () => {
+  //   if (movies.length === 0) {
+  //     return;
+  //   } else {
+  //     movies.filter((element) => element.movieTitle === chooseFilm);
+  //     let movieTimes = aMovie[0].time;
+  //     let showMovie = movieTimes.map((element) => <div>element</div>);
+  //     console.log(showMovie);
+  //     return showMovie;
+  //   }
+  // };
+
+  // aMovie();
 
   return (
     <>
       <form onSubmit={(e) => handleDisplay(e)}>
-        <label>Välj ett datum:</label>
-        <input type="date" value={date} onChange={handleDateChange}></input>
+        <label htmlFor="date">
+          Välj ett datum:
+          <input
+            id="date"
+            type="date"
+            value={date}
+            onChange={handleDateChange}
+          />
+        </label>
 
-        <label>Välj en film: </label>
-        <select value={chooseFilm} onChange={handleFilmChange} name="movies">
-          <option selected value="-">
-            -
-          </option>
-          <option value="The-Princess-Bride">The Princess Bride</option>
-          <option value="Pippi-Langstrumpor">Pippi Långstrumpor</option>
-        </select>
-        <label>Biljetter:</label>
-        <input
-          value={chooseTicket}
-          onChange={handleTicketChange}
-          type="number"
-          id="quantity"
-          name="quantity"
-          min="0"
-          max="25"
-        ></input>
+        <label htmlFor="filmTitle">
+          Välj en film:
+          <select
+            id="filmTitle"
+            value={chooseFilm}
+            onChange={handleFilmChange}
+            name="movies"
+          >
+            <option defaultValue="default">-</option>
+            {movieTitles()}
+          </select>
+        </label>
 
-        <input type="submit"></input>
+        <label htmlFor="quantity">
+          Biljetter:
+          <input
+            value={chooseTicket}
+            onChange={handleTicketChange}
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="0"
+            max="25"
+          />
+        </label>
+        <input type="submit" />
       </form>
+
       <p>Alla filmer börjar kl. 7</p>
       <p>Betalning är endast kontant vid dörren</p>
       <p>Priset är 50 kr per biljett</p>
+
       <div className="background">
         {displayTicket && (
           <div className="card">
-            <img />
             <div className="container">
               <h4>
                 <b>Biljetter</b>
               </h4>
-              <p>Bio</p>
-              <p>Datum</p>
-              <p>Antal</p>
+              <p>Bio: {chooseFilm} </p>
+              <p>Datum: {date} </p>
+              <p>Antal: {chooseTicket} </p>
               <p>Skriv Ut</p>
             </div>
           </div>
