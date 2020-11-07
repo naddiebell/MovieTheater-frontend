@@ -40,7 +40,7 @@ export default function BuyTickets(props) {
 
   const showTicket = () => {
     if (date !== "YYYY-MM-DD" && chooseFilm !== "-" && chooseTicket) {
-      setDisplayTicket(true);
+      
       const aMovie = movies.filter(
         (element) => element.movieTitle === chooseFilm
       );
@@ -53,7 +53,8 @@ export default function BuyTickets(props) {
 
   function handleDisplay(e) {
     e.preventDefault();
-    showTicket();
+    //showTicket();
+    setDisplayTicket(true);
     axios
       .post("http://localhost:5709/api/v1/tickets", {
         filmName: chooseFilm,
@@ -69,20 +70,6 @@ export default function BuyTickets(props) {
         console.log(error);
       });
   }
-
-  // const aMovie = () => {
-  //   if (movies.length === 0) {
-  //     return;
-  //   } else {
-  //     movies.filter((element) => element.movieTitle === chooseFilm);
-  //     let movieTimes = aMovie[0].time;
-  //     let showMovie = movieTimes.map((element) => <div>element</div>);
-  //     console.log(showMovie);
-  //     return showMovie;
-  //   }
-  // };
-
-  // aMovie();
 
   return (
     <>
@@ -131,17 +118,20 @@ export default function BuyTickets(props) {
 
       <div className="background">
         {displayTicket && (
-          <div className="card">
-            <div className="container">
-              <h4>
-                <b>Biljetter</b>
-              </h4>
-              <p>Bio: {chooseFilm} </p>
-              <p>Datum: {date} </p>
-              <p>Antal: {chooseTicket} </p>
-              <p>Skriv Ut</p>
+          <>
+            <div>{showTicket()}</div>
+            <div className="card">
+              <div className="container">
+                <h4>
+                  <b>Biljetter</b>
+                </h4>
+                <p>Bio: {chooseFilm} </p>
+                <p>Datum: {date} </p>
+                <p>Antal: {chooseTicket} </p>
+                <p>Skriv Ut</p>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </>
