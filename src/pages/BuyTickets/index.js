@@ -38,22 +38,32 @@ export default function BuyTickets(props) {
     setChooseTicket(e.target.value);
   };
 
-  const showTicket = () => {
+  const showSelection = () => {
     if (date !== "YYYY-MM-DD" && chooseFilm !== "-" && chooseTicket) {
-      
       const aMovie = movies.filter(
         (element) => element.movieTitle === chooseFilm
       );
-      const movieTimes = aMovie[0].time;
-      console.log(movieTimes);
-      const filmDisplay = movieTimes.map((element) => <div>{element}</div>);
+
+      let { img } = aMovie[0];
+      
+
+      let { movieTitle } = aMovie[0];
+      const movieTimes = aMovie[0].time.map((element) => <div>{element}</div>);
+
+      const filmDisplay = (
+        <div>
+          {movieTitle}
+          <img src={img} alt={movieTitle} />
+          {movieTimes} 
+        </div>
+      );
+
       return filmDisplay;
     }
   };
 
   function handleDisplay(e) {
     e.preventDefault();
-    //showTicket();
     setDisplayTicket(true);
     axios
       .post("http://localhost:5709/api/v1/tickets", {
@@ -112,14 +122,13 @@ export default function BuyTickets(props) {
         <input type="submit" />
       </form>
 
-      <p>Alla filmer börjar kl. 7</p>
       <p>Betalning är endast kontant vid dörren</p>
       <p>Priset är 50 kr per biljett</p>
 
       <div className="background">
         {displayTicket && (
           <>
-            <div>{showTicket()}</div>
+            <div>{showSelection()}</div>
             <div className="card">
               <div className="container">
                 <h4>
