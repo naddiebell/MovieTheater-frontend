@@ -4,6 +4,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../../Components/Card/card.css";
+import "./style.css";
+import { useNavigate } from "@reach/router";
 
 export default function BuyTickets(props) {
   const [displayTicket, setDisplayTicket] = useState(false);
@@ -11,6 +13,13 @@ export default function BuyTickets(props) {
   const [chooseFilm, setChooseFilm] = useState("-");
   const [chooseTicket, setChooseTicket] = useState("");
   const { movies } = props;
+
+  const navigate = useNavigate();
+
+  const handleButton = (e) => {
+    e.preventDefault();
+    navigate("/satten");
+  };
 
   const movieTitles = () => {
     if (movies.length === 0) {
@@ -45,16 +54,25 @@ export default function BuyTickets(props) {
       );
 
       let { img } = aMovie[0];
-      
 
-      let { movieTitle } = aMovie[0];
-      const movieTimes = aMovie[0].time.map((element) => <div>{element}</div>);
+      const { movieTitle } = aMovie[0];
+      const movieTimes = aMovie[0].time.map((element, index) => (
+        <button
+          onClick={handleButton}
+          type="button"
+          className="myButton"
+          key={index}
+        >
+          {element}
+        </button>
+      ));
 
       const filmDisplay = (
         <div>
           {movieTitle}
+          <p>Datum: {date} </p>
           <img src={img} alt={movieTitle} />
-          {movieTimes} 
+          {movieTimes}
         </div>
       );
 
@@ -134,8 +152,6 @@ export default function BuyTickets(props) {
                 <h4>
                   <b>Biljetter</b>
                 </h4>
-                <p>Bio: {chooseFilm} </p>
-                <p>Datum: {date} </p>
                 <p>Antal: {chooseTicket} </p>
                 <p>Skriv Ut</p>
               </div>

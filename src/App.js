@@ -4,9 +4,8 @@ import "./App.css";
 import data from "./data.json";
 import Home from "./pages/Home";
 import BuyTickets from "./pages/BuyTickets";
-import Locations from "./pages/Locations";
 import MovieDetails from "./pages/MovieDetails";
-import SelectTickets from "./pages/SelectTickets";
+import SelectSeats from "./pages/SelectSeats";
 import NavBar from "./Components/NavBar/NavBar";
 
 function App() {
@@ -26,9 +25,8 @@ function App() {
       <Router>
         <Home movies={movies} path="/" />
         <BuyTickets movies={movies} path="biljetter" />
-        <Locations path="platser" />
         <MovieDetails path="filmer" />
-        <SelectTickets path="satten" />
+        <SelectSeats path="/satten" />
       </Router>
     </>
   );
