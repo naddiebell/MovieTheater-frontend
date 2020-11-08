@@ -7,6 +7,7 @@ import BuyTickets from "./pages/BuyTickets";
 import MovieDetails from "./pages/MovieDetails";
 import SelectSeats from "./pages/SelectSeats";
 import NavBar from "./Components/NavBar/NavBar";
+import Email from "./pages/Email";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -27,6 +28,7 @@ function App() {
         <BuyTickets movies={movies} path="biljetter" />
         <MovieDetails path="filmer" />
         <SelectSeats path="/satten" />
+        <Email path="/verify" />
       </Router>
     </>
   );

@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import "./style.css";
 import Seat from "../../Components/Seat/Seat";
 import "../../SharedStyles/Button/button.css";
+import { useNavigate } from "@reach/router";
+
 
 export default function SelectSeats() {
   const [seatValue, setSeatValue] = useState(Array(25).fill(null));
   const [displaySeat, setDisplaySeat] = useState(false);
+
+  const navigate = useNavigate();
 
   function renderSeat(i) {
     return (
@@ -46,8 +50,8 @@ export default function SelectSeats() {
   }
 
   const handleClick = () => {
-    getSeats();
     setDisplaySeat(true);
+    navigate("/")
   };
 
   return (
@@ -97,6 +101,7 @@ export default function SelectSeats() {
         Välj Platser
       </button>
       {<p>{getSeats()}</p>}
+      <p>Alla biljetter är 80 kr</p>
     </>
   );
 }
