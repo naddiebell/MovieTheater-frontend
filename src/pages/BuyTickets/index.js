@@ -72,7 +72,7 @@ export default function BuyTickets(props) {
         <div>
           {movieTitle}
           <p>Datum: {date} </p>
-          <img src={img} alt={movieTitle} />
+          <img src={img} alt={movieTitle} className="movieImg" />
           {movieTimes}
         </div>
       );
@@ -148,15 +148,6 @@ export default function BuyTickets(props) {
         {displayTicket && (
           <>
             <div>{showSelection()}</div>
-            <div className="card">
-              <div className="container">
-                <h4>
-                  <b>Biljetter</b>
-                </h4>
-                <p>Antal: {chooseTicket} </p>
-                <p>Skriv Ut</p>
-              </div>
-            </div>
           </>
         )}
       </div>
