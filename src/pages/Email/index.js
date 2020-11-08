@@ -1,13 +1,16 @@
 import React from "react";
 import emailjs from "emailjs-com";
 
+const emailjsId = process.env.REACT_APP_EMAILJS_ID;
+console.log("haaaa", emailjsId)
+
 function Email() {
 
   function sendEmail(e) {
     e.preventDefault();
 
     emailjs
-      .sendForm("contact_service", "contact_form", e.target, "")
+      .sendForm("contact_service", "contact_form", e.target, "emailjsId")
       .then(
         (result) => {
           console.log(result.text);

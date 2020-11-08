@@ -9,6 +9,8 @@ import SelectSeats from "./pages/SelectSeats";
 import NavBar from "./Components/NavBar/NavBar";
 import Email from "./pages/Email";
 
+require('dotenv').config()
+
 function App() {
   const [movies, setMovies] = useState([]);
 
