@@ -26,24 +26,28 @@ export default function SelectSeats() {
     );
   }
 
-  function getSeats () {
-    let indexes = [];
-    let seats;
-    for(let i = 0; i < seatValue.length; i++) {
+  function getSeats() {
+    const indexes = [];
+    for (let i = 0; i < seatValue.length; i += 1) {
       if (seatValue[i] === "X") {
-        seats = `Your selected seats are: ${i + 1}`;
-        
-      } else {
-        seats = "Choose a seat";
+        indexes.push(i);
       }
     }
-    return seats;
+    if (indexes.length === 0) {
+      return "Välj minst en plats.";
+    }
+    if (indexes.length === 1) {
+      return `Din valda plats är: ${indexes[0]}`;
+    }
+    const seating = indexes.map((seats) => {
+      return ` ${seats}`;
+    });
+    return `Din valda plats är: ${seating}`;
   }
 
   const handleClick = () => {
-    console.log("clicked Seat Value", seatValue);
-    getSeats()
-    setDisplaySeat(true)
+    getSeats();
+    setDisplaySeat(true);
   };
 
   return (
@@ -90,11 +94,9 @@ export default function SelectSeats() {
         </div>
       </div>
       <button onClick={handleClick} type="button" className="myButton">
-        Select Seats
+        Välj Platser
       </button>
-      {displaySeat &&
-        <p>{getSeats()}</p>
-      }
+      {<p>{getSeats()}</p>}
     </>
   );
 }
