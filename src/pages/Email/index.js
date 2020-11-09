@@ -2,7 +2,6 @@ import React from "react";
 import emailjs from "emailjs-com";
 
 const emailjsId = process.env.REACT_APP_EMAILJS_ID;
-console.log("haaaa", emailjsId)
 
 function Email() {
 

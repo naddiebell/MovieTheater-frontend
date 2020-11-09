@@ -16,10 +16,10 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       // eslint-disable-next-line no-unused-vars
       const response = await setMovies(data.movies);
-    }
+    };
     fetchData();
   }, []);
 
@@ -31,7 +31,7 @@ function App() {
           <Home movies={movies} path="/" />
           <BuyTickets movies={movies} path="biljetter" />
           <MovieDetails path="filmer" />
-          <SelectSeats path="/satten" />
+          <SelectSeats path="/platser" />
           <Email path="/verify" />
         </Router>
       </AppContext.Provider>

@@ -1,25 +1,38 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable func-names */
 /* eslint-disable no-console */
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import "../../Components/Card/card.css";
 import "./style.css";
 import "../../SharedStyles/Button/button.css";
 import { useNavigate } from "@reach/router";
+import AppContext from "../../store/context";
+
 
 export default function BuyTickets(props) {
+  const { state, dispatch } = useContext(AppContext);
   const [displayTicket, setDisplayTicket] = useState(false);
-  const [date, setDate] = useState("YYYY-MM-DD");
-  const [chooseFilm, setChooseFilm] = useState("-");
-  const [chooseTicket, setChooseTicket] = useState("");
+  const [ticketData, setTicketData] = useState({
+    date: "",
+    filmTitle: "",
+    ticketAmount: "",
+  });
   const { movies } = props;
 
   const navigate = useNavigate();
 
+  const { date, filmTitle, ticketAmount } = ticketData;
+
+  useEffect(() => {
+    if (ticketData) {
+      dispatch({ type: "setTicket", data: ticketData });
+    }
+  }, [ticketData, dispatch]);
+
   const handleButton = (e) => {
     e.preventDefault();
-    navigate("/satten");
+    navigate("/platser");
   };
 
   const movieTitles = () => {
@@ -36,22 +49,16 @@ export default function BuyTickets(props) {
     });
   };
 
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-  };
-
-  const handleFilmChange = (e) => {
-    setChooseFilm(e.target.value);
-  };
-
-  const handleTicketChange = (e) => {
-    setChooseTicket(e.target.value);
+  const handleChange = async (e) => {
+    const { value } = e.target;
+    const { name } = e.target;
+    setTicketData({ ...ticketData, [name]: value });
   };
 
   const showSelection = () => {
-    if (date !== "YYYY-MM-DD" && chooseFilm !== "-" && chooseTicket) {
+    if (date !== "" && filmTitle !== "" && ticketAmount) {
       const aMovie = movies.filter(
-        (element) => element.movieTitle === chooseFilm
+        (element) => element.movieTitle === filmTitle
       );
 
       const { img } = aMovie[0];
@@ -86,9 +93,9 @@ export default function BuyTickets(props) {
     setDisplayTicket(true);
     axios
       .post("http://localhost:5709/api/v1/tickets", {
-        filmName: chooseFilm,
+        filmName: filmTitle,
         dateOfFilm: date,
-        seatAmount: chooseTicket,
+        seatAmount: ticketAmount,
       })
       .then(function (response) {
         // handle success
@@ -99,27 +106,22 @@ export default function BuyTickets(props) {
         console.log(error);
       });
   }
-
+console.log("aaaa" , state)
   return (
     <>
       <form onSubmit={(e) => handleDisplay(e)}>
         <label htmlFor="date">
           Välj ett datum:
-          <input
-            id="date"
-            type="date"
-            value={date}
-            onChange={handleDateChange}
-          />
+          <input id="date" type="date" value={ticketData.date} onChange={handleChange} name="date" />
         </label>
 
         <label htmlFor="filmTitle">
           Välj en film:
           <select
             id="filmTitle"
-            value={chooseFilm}
-            onChange={handleFilmChange}
-            name="movies"
+            value={ticketData.filmTitle}
+            onChange={handleChange}
+            name="filmTitle"
           >
             <option defaultValue="default">-</option>
             {movieTitles()}
@@ -129,11 +131,11 @@ export default function BuyTickets(props) {
         <label htmlFor="quantity">
           Biljetter:
           <input
-            value={chooseTicket}
-            onChange={handleTicketChange}
+            value={ticketData.ticketAmount}
+            onChange={handleChange}
             type="number"
             id="quantity"
-            name="quantity"
+            name="ticketAmount"
             min="0"
             max="25"
           />
