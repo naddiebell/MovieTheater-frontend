@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./style.css";
+import { useNavigate } from "@reach/router";
 import Seat from "../../Components/Seat/Seat";
 import "../../SharedStyles/Button/button.css";
-import { useNavigate } from "@reach/router";
-
+import AppContext from "../../store/context";
 
 export default function SelectSeats() {
   const [seatValue, setSeatValue] = useState(Array(25).fill(null));
+  // eslint-disable-next-line no-unused-vars
   const [displaySeat, setDisplaySeat] = useState(false);
 
   const navigate = useNavigate();
+  const { state, dispatch } = useContext(AppContext);
+
+  console.log("state", state )
 
   function renderSeat(i) {
     return (
@@ -46,12 +50,12 @@ export default function SelectSeats() {
     const seating = indexes.map((seats) => {
       return ` ${seats}`;
     });
-    return `Din valda plats är: ${seating}`;
+    return `Dina valda platser är: ${seating}`;
   }
 
   const handleClick = () => {
     setDisplaySeat(true);
-    navigate("/")
+    navigate("/verify");
   };
 
   return (
@@ -100,8 +104,10 @@ export default function SelectSeats() {
       <button onClick={handleClick} type="button" className="myButton">
         Välj Platser
       </button>
-      {<p>{getSeats()}</p>}
+      <p>{getSeats()}</p>
       <p>Alla biljetter är 80 kr</p>
+      <p>{state.ticket.filmTitle}</p>
+      <p>{state.ticket.date}</p>
     </>
   );
 }
