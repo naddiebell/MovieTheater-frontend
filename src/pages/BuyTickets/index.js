@@ -142,7 +142,7 @@ export default function BuyTickets(props) {
       </form>
 
       <p>Betalning är endast kontant vid dörren</p>
-      <p>Priset är 50 kr per biljett</p>
+      <p>Priset är 80 kr per biljett</p>
 
       <div className="background">
         {displayTicket && (

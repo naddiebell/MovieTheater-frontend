@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { Router } from "@reach/router";
+import AppContext from "./store/context";
+import store from "./store";
 import "./App.css";
 import data from "./data.json";
 import Home from "./pages/Home";
@@ -9,9 +11,8 @@ import SelectSeats from "./pages/SelectSeats";
 import NavBar from "./Components/NavBar/NavBar";
 import Email from "./pages/Email";
 
-require('dotenv').config()
-
 function App() {
+  const [state, dispatch] = useReducer(store.reducer, store.initialState);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -25,13 +26,15 @@ function App() {
   return (
     <>
       <NavBar />
-      <Router>
-        <Home movies={movies} path="/" />
-        <BuyTickets movies={movies} path="biljetter" />
-        <MovieDetails path="filmer" />
-        <SelectSeats path="/satten" />
-        <Email path="/verify" />
-      </Router>
+      <AppContext.Provider value={{ state, dispatch }}>
+        <Router>
+          <Home movies={movies} path="/" />
+          <BuyTickets movies={movies} path="biljetter" />
+          <MovieDetails path="filmer" />
+          <SelectSeats path="/satten" />
+          <Email path="/verify" />
+        </Router>
+      </AppContext.Provider>
     </>
   );
 }
