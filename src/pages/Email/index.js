@@ -9,7 +9,7 @@ function Email() {
     e.preventDefault();
 
     emailjs
-      .sendForm("contact_service", "contact_form", e.target, "emailjsId")
+      .sendForm("contact_service", "contact_form", e.target, emailjsId)
       .then(
         (result) => {
           console.log(result.text);
