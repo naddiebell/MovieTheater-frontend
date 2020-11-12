@@ -1,6 +1,6 @@
 import React from "react";
-import MovieCarousel from "../../Components/Carousel/index";
 import "./style.css";
+import MovieCarousel from "../../Components/Carousel/index";
 
 export default function HomePage(props) {
   const { movies } = props;
