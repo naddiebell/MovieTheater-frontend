@@ -12,6 +12,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import Email from "./pages/Email";
 import Payment from "./pages/Payment";
 
+
 function App() {
   const [state, dispatch] = useReducer(store.reducer, store.initialState);
   const [movies, setMovies] = useState([]);
@@ -27,6 +28,8 @@ function App() {
   return (
     <>
       <NavBar />
+     
+
       <AppContext.Provider value={{ state, dispatch }}>
         <Router>
           <Home movies={movies} path="/" />
