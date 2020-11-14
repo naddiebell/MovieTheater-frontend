@@ -125,7 +125,7 @@ export default function BuyTickets(props) {
       });
   }
 
-  //console.log("aaaa", state);
+  console.log("aaaa", state);
   return (
     <>
       <form onSubmit={(e) => handleDisplay(e)} className="form">
