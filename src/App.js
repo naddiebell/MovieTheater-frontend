@@ -28,8 +28,6 @@ function App() {
   return (
     <>
       <NavBar />
-     
-
       <AppContext.Provider value={{ state, dispatch }}>
         <Router>
           <Home movies={movies} path="/" />
