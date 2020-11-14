@@ -1,5 +1,15 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import AppContext from "../../store/context";
 
-export default function MovieDetails() {
-  return <div>this is the movie details</div>;
+function MovieDetails(props) {
+    const { state } = useContext(AppContext);
+
+    console.log("staaattteee from moviedetails", state.ticket)
+    return (
+        <div>
+            
+        </div>
+    );
 }
+
+export default MovieDetails;

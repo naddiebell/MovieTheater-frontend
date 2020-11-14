@@ -1,20 +1,50 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-expressions */
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./style.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useNavigate } from "@reach/router";
+import AppContext from "../../store/context";
 
 function MovieCarousel(props) {
-  const { movies } = props;
+  const { dispatch } = useContext(AppContext);
+  const [movieData, setMovieData] = useState({
+    filmTitle: "",
+  });
 
-  let movieArray = () => {
+  const { movies } = props;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (movieData) {
+      dispatch({ type: "setTicket", data: movieData });
+    }
+  }, [movieData, dispatch]);
+
+  const handleClick = (element) => {
+    setMovieData({ filmTitle: element.movieTitle });
+    navigate("/filmer");
+  }
+
+  const movieArray = () => {
     if (movies.length === 0) {
       return <div></div>;
     }
     return movies.map((element, index) => {
       return (
-        <div className="imageDiv">
-          <img src={element.img} alt={element.movieTitle} className="movieImage"/>
+        <div
+          className="imageDiv"
+          onClick={() => handleClick(element)}
+          key={index}
+        >
+          <img
+            src={element.img}
+            alt={element.movieTitle}
+            className="movieImage"
+          />
           <p className="aLegend">{element.movieTitle}</p>
         </div>
       );
@@ -47,7 +77,6 @@ function MovieCarousel(props) {
       responsive={responsive}
       ssr // means to render carousel on server-side.
       infinite
-      autoPlay="false"
       // autoPlay={this.props.deviceType !== "mobile" ? true : false}
       autoPlaySpeed={2000}
       keyBoardControl
@@ -85,4 +114,4 @@ function MovieCarousel(props) {
 // }
 
 export default MovieCarousel;
-// {movieArray()}
+

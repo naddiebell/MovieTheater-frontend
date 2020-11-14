@@ -128,18 +128,8 @@ export default function BuyTickets(props) {
   console.log("aaaa", state);
   return (
     <>
+      <h1 className="pageH1">Biljetter till föreställningar i Stockholm</h1>
       <form onSubmit={(e) => handleDisplay(e)} className="form">
-        {/* <label htmlFor="date">
-          Välj ett datum:
-          <input
-            id="date"
-            type="date"
-            value={ticketData.date}
-            onChange={handleChange}
-            name="date"
-          />
-        </label> */}
-
         <label htmlFor="date">
           Välj en datum:
           <select

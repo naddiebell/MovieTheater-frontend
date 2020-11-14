@@ -5,6 +5,7 @@
             "movieTitle": "Willy Wonka and The Chocolate Factory",
             "img": "https://i.pinimg.com/originals/1f/c1/09/1fc109397dda3d5099ae035d47f34a3c.jpg",
             "description": "to be added later",
+            "daysPlaying": ["måndag", "onsdag"],
             "childrenFriendly": "yes",
             "year": "1971",
             "time": ["15:00", "17:00", "19:00"]
@@ -12,8 +13,9 @@
         {
             "id": 2,
             "movieTitle": "The Lion King",
-            "img": "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F9CC1068D83E3B11124B4F40906600AEC00FD2E40E9F44F4FA4CF86443DECB91",
+            "img": "https://badmoviemarathon.files.wordpress.com/2015/10/the-lion-king-poster.jpg",
             "description": "to be added later",
+            "daysPlaying": ["tisdag", "torsdag", "fredag"],
             "childrenFriendly": "yes",
             "year": "1994",
             "time": ["16:00", "18:00", "20:00"]
@@ -21,8 +23,9 @@
         {
             "id": 3,
             "movieTitle": "The Wizard of Oz",
-            "img": "https://images.immediate.co.uk/production/volatile/sites/3/2019/10/Copy-of-Copy-of-Sky-TV-Black-Friday-2-5d6a7cb.png?quality=90&resize=768,574",
+            "img": "https://movieposters2.com/images/1394042-b.jpg",
             "description": "to be added later",
+            "daysPlaying": ["lördag", "onsdag", "fredag"],
             "childrenFriendly": "yes",
             "year": "1939",
             "time": ["16:30", "18:30"]
@@ -32,6 +35,7 @@
             "movieTitle": "Some Like It Hot",
             "img": "https://www.filmsite.org/posters/somelikeithot.jpg",
             "description": "to be added later",
+            "daysPlaying": ["måndag", "onsdag"],
             "childrenFriendly": "no",
             "year": "1959",
             "time": ["17:30", "19:30"]
@@ -41,6 +45,7 @@
             "movieTitle": "The Godfather",
             "img": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
             "description": "to be added later",
+            "daysPlaying": ["söndag", "torsdag"],
             "childrenFriendly": "no",
             "year": "1972",
             "time": ["20:00", "22:00"]
@@ -50,6 +55,7 @@
             "movieTitle": "Forrest Gump",
             "img": "https://velociraptor256.files.wordpress.com/2017/08/forrest-gump-poster-1994-tom-hanks.png",
             "description": "to be added later",
+            "daysPlaying": ["fredag", "lördag"],
             "childrenFriendly": "no",
             "year": "1994",
             "time": ["16:30", "18:30"]
@@ -59,6 +65,7 @@
             "movieTitle": "The Princess Bride",
             "img": "https://images-na.ssl-images-amazon.com/images/I/815sfDB8mEL._SL1500_.jpg",
             "description": "to be added later",
+            "daysPlaying": ["söndag", "tisdag"],
             "childrenFriendly": "yes",
             "year": "1987",
             "time": ["16:00", "18:00", "20:00"]
@@ -68,6 +75,7 @@
             "movieTitle": "Apocalypse Now",
             "img": "https://static.rogerebert.com/uploads/movie/movie_poster/apocalypse-now-1979/large_xytHTHqtQlXtzyJTtlqnVjvDdqd.jpg",
             "description": "to be added later",
+            "daysPlaying": ["lördag", "onsdag", "fredag"],
             "childrenFriendly": "no",
             "year": "1979",
             "time": ["15:00", "17:00", "19:00"]
@@ -77,6 +85,7 @@
             "movieTitle": "The Breakfast Club",
             "img": "https://cdn.shopify.com/s/files/1/1416/8662/products/breakfast_club_1985_french_petite_original_film_art_1200x.jpg?v=1589477162",
             "description": "to be added later",
+            "daysPlaying": ["fredag", "tisdag", "söndag"],
             "childrenFriendly": "yes",
             "year": "1985",
             "time": ["17:30", "19:30"]
@@ -86,6 +95,7 @@
             "movieTitle": "Pulp Fiction",
             "img": "https://i.pinimg.com/originals/36/b1/0a/36b10aa4b63950458999594ca442178e.jpg",
             "description": "to be added later",
+            "daysPlaying": ["tisdag", "torsdag", "fredag"],
             "childrenFriendly": "no",
             "year": "1994",
             "time": ["21:00", "23:00"]

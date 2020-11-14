@@ -1,17 +1,8 @@
 .homeBackground {
-    /* background-image: url("../../background_img/retro_movie_theater.jpg"); */
+    /* background-image: url("./background_img/retro_movie_theater.jpg"); */
     height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: black;
     /* opacity: 0.4; */
     width: 50%;
     margin: auto;
     padding: 2rem;
-}
-
-.movieDiv {
-
 }
