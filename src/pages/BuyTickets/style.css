@@ -3,3 +3,12 @@
     max-height: 30rem;
     margin-left: 3rem;
 }
+
+.form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10%
+    /* position: absolute;
+    top: 40%; */
+}

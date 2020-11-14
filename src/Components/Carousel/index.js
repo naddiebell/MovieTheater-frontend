@@ -47,8 +47,9 @@ function MovieCarousel(props) {
       responsive={responsive}
       ssr // means to render carousel on server-side.
       infinite
+      autoPlay="false"
       // autoPlay={this.props.deviceType !== "mobile" ? true : false}
-      autoPlaySpeed={1000}
+      autoPlaySpeed={2000}
       keyBoardControl
       customTransition="all .5"
       transitionDuration={500}

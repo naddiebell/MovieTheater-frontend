@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable func-names */
 /* eslint-disable no-console */
@@ -8,7 +9,9 @@ import "./style.css";
 import "../../SharedStyles/Button/button.css";
 import { useNavigate } from "@reach/router";
 import AppContext from "../../store/context";
+import dates from "./dates";
 
+console.log("datesArr", dates);
 
 export default function BuyTickets(props) {
   const { state, dispatch } = useContext(AppContext);
@@ -49,12 +52,27 @@ export default function BuyTickets(props) {
     });
   };
 
+  const selectDates = () => {
+    if (dates.length === 0) {
+      return;
+    }
+    // eslint-disable-next-line consistent-return
+    return dates.map((dateE, i) => {
+      return (
+        <option value={dateE} key={i}>
+          {dateE}
+        </option>
+      );
+    });
+  };
+
   const handleChange = async (e) => {
     const { value } = e.target;
     const { name } = e.target;
     setTicketData({ ...ticketData, [name]: value });
   };
 
+  // eslint-disable-next-line consistent-return
   const showSelection = () => {
     if (date !== "" && filmTitle !== "" && ticketAmount) {
       const aMovie = movies.filter(
@@ -106,13 +124,34 @@ export default function BuyTickets(props) {
         console.log(error);
       });
   }
-console.log("aaaa" , state)
+
+  //console.log("aaaa", state);
   return (
     <>
-      <form onSubmit={(e) => handleDisplay(e)}>
-        <label htmlFor="date">
+      <form onSubmit={(e) => handleDisplay(e)} className="form">
+        {/* <label htmlFor="date">
           Välj ett datum:
-          <input id="date" type="date" value={ticketData.date} onChange={handleChange} name="date" />
+          <input
+            id="date"
+            type="date"
+            value={ticketData.date}
+            onChange={handleChange}
+            name="date"
+          />
+        </label> */}
+
+        <label htmlFor="date">
+          Välj en datum:
+          <select
+            id="date"
+            type="date"
+            value={ticketData.date}
+            onChange={handleChange}
+            name="date"
+          >
+            <option defaultValue="default">-</option>
+            {selectDates()}
+          </select>
         </label>
 
         <label htmlFor="filmTitle">
@@ -142,9 +181,6 @@ console.log("aaaa" , state)
         </label>
         <input type="submit" />
       </form>
-
-      <p>Betalning är endast kontant vid dörren</p>
-      <p>Priset är 80 kr per biljett</p>
 
       <div className="background">
         {displayTicket && (
