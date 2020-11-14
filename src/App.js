@@ -32,7 +32,7 @@ function App() {
         <Router>
           <Home movies={movies} path="/" />
           <BuyTickets movies={movies} path="biljetter" />
-          <MovieDetails path="filmer" />
+          <MovieDetails movies={movies} path="filmer" />
           <SelectSeats path="/platser" />
           <Email path="/verify" />
           <Payment path="/payment" />
