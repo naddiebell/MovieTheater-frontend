@@ -11,9 +11,7 @@ export default function SelectSeats() {
   const [displaySeat, setDisplaySeat] = useState(false);
 
   const navigate = useNavigate();
-  const { state, dispatch } = useContext(AppContext);
-
-  console.log("state", state )
+  const { state } = useContext(AppContext);
 
   function renderSeat(i) {
     return (
