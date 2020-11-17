@@ -13,6 +13,8 @@ import dates from "./dates";
 
 console.log("datesArr", dates);
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 export default function BuyTickets(props) {
   const { state, dispatch } = useContext(AppContext);
   const [displayTicket, setDisplayTicket] = useState(false);
@@ -110,7 +112,7 @@ export default function BuyTickets(props) {
     e.preventDefault();
     setDisplayTicket(true);
     axios
-      .post("http://localhost:5709/api/v1/tickets", {
+      .post(`${backendURL}/api/v1/tickets`, {
         filmName: filmTitle,
         dateOfFilm: date,
         seatAmount: ticketAmount,
