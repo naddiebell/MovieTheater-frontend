@@ -7,10 +7,17 @@ export default function HomePage(props) {
 
   return (
     <>
+      <div homeDiv>
+        <img
+          // eslint-disable-next-line global-require
+          src={require("../../background_img/retro_movie_theater.jpg")}
+          alt="background"
+          className="homeImg"
+        />
+      </div>
       <div className="homeBackground">
         <MovieCarousel movies={movies} />
       </div>
     </>
   );
 }
-
