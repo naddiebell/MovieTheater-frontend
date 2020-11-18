@@ -1,0 +1,62 @@
+.background {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.backgroundImgDiv {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    z-index: 2;
+    opacity: 0.6;
+}
+
+.movieTitle {
+    color: white;
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+}
+
+.moviePoster {
+    z-index: 5;
+    height: 10em;
+    position: absolute;
+    margin-left: 2rem;
+    top: 30%;
+    margin-top: -40px;
+    border: 2px solid white;
+   
+}
+
+.descriptionTitle {
+    z-index: 5;
+    position: absolute;
+    color: green;
+    margin-left: 41em;
+    top: 25%;
+   
+}
+
+.descAndInfo {
+    height: auto;
+    width: 20em;
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.description {
+    position: absolute;
+    z-index: 5;
+    width: 30em;
+    top: 30%;
+    margin-left: 41em; 
+}
+
+.ticketBtn {
+    position: absolute;
+    z-index: 7;
+    left: 50%;
+    top: 37em;
+}

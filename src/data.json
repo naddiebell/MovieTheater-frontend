@@ -8,17 +8,21 @@
             "daysPlaying": ["måndag", "onsdag"],
             "childrenFriendly": "yes",
             "year": "1971",
-            "time": ["15:00", "17:00", "19:00"]
+            "time": ["15:00", "17:00", "19:00"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 2,
             "movieTitle": "The Lion King",
             "img": "https://badmoviemarathon.files.wordpress.com/2015/10/the-lion-king-poster.jpg",
-            "description": "to be added later",
+            "description": "Denna Disney-animerade funktion följer äventyren hos det unga lejonpriset Simba. Simbas onda farbror, Scar, planerar att utnyttja Mufasas tron ​​genom att locka far och son till en storm av vildgubbar. Simba flyr och återvänder som vuxen för att ta tillbaka sitt hemland från Scar med hjälp av sina vänner Timon och Pumbaa.",
             "daysPlaying": ["tisdag", "torsdag", "fredag"],
             "childrenFriendly": "yes",
             "year": "1994",
-            "time": ["16:00", "18:00", "20:00"]
+            "time": ["16:00", "18:00", "20:00"],
+            "backgroundImg":"https://images.flickreel.com/wp-content/uploads/2016/09/LionKing-1280x720.jpg",
+            "video": "https://www.youtube.com/embed/Zn_qirpdBag"
         },
         {
             "id": 3,
@@ -28,7 +32,9 @@
             "daysPlaying": ["lördag", "onsdag", "fredag"],
             "childrenFriendly": "yes",
             "year": "1939",
-            "time": ["16:30", "18:30"]
+            "time": ["16:30", "18:30"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 4,
@@ -38,7 +44,9 @@
             "daysPlaying": ["måndag", "onsdag"],
             "childrenFriendly": "no",
             "year": "1959",
-            "time": ["17:30", "19:30"]
+            "time": ["17:30", "19:30"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 5,
@@ -48,7 +56,9 @@
             "daysPlaying": ["söndag", "torsdag"],
             "childrenFriendly": "no",
             "year": "1972",
-            "time": ["20:00", "22:00"]
+            "time": ["20:00", "22:00"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 6,
@@ -58,7 +68,9 @@
             "daysPlaying": ["fredag", "lördag"],
             "childrenFriendly": "no",
             "year": "1994",
-            "time": ["16:30", "18:30"]
+            "time": ["16:30", "18:30"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 7,
@@ -68,7 +80,9 @@
             "daysPlaying": ["söndag", "tisdag"],
             "childrenFriendly": "yes",
             "year": "1987",
-            "time": ["16:00", "18:00", "20:00"]
+            "time": ["16:00", "18:00", "20:00"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 8,
@@ -78,7 +92,9 @@
             "daysPlaying": ["lördag", "onsdag", "fredag"],
             "childrenFriendly": "no",
             "year": "1979",
-            "time": ["15:00", "17:00", "19:00"]
+            "time": ["15:00", "17:00", "19:00"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 9,
@@ -88,7 +104,9 @@
             "daysPlaying": ["fredag", "tisdag", "söndag"],
             "childrenFriendly": "yes",
             "year": "1985",
-            "time": ["17:30", "19:30"]
+            "time": ["17:30", "19:30"],
+            "bakgroundImg": "",
+            "video": ""
         },
         {
             "id": 10,
@@ -98,7 +116,9 @@
             "daysPlaying": ["tisdag", "torsdag", "fredag"],
             "childrenFriendly": "no",
             "year": "1994",
-            "time": ["21:00", "23:00"]
+            "time": ["21:00", "23:00"],
+            "bakgroundImg": "",
+            "video": ""
         }
     ]
 }
