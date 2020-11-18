@@ -3,9 +3,10 @@
 import React, { useContext } from "react";
 import ReactPlayer from "react-player";
 import { useNavigate } from "@reach/router";
+import Carousel from "react-multi-carousel";
 import AppContext from "../../store/context";
 import "./style.css";
-import MovieCarousel from "../../Components/Carousel/index";
+import "react-multi-carousel/lib/styles.css";
 
 function MovieDetails(props) {
   const navigate = useNavigate();
@@ -54,14 +55,68 @@ function MovieDetails(props) {
     return disp;
   };
 
+  const movieArray = () => {
+    if (movies.length === 0) {
+      return <div />;
+    }
+    return movies.map((element) => {
+      return (
+        <div className="imageDiv" key={element.id}>
+          <img
+            src={element.img}
+            alt={element.movieTitle}
+            className="movieImage"
+          />
+          {/* <p className="aLegend">{element.movieTitle}</p> */}
+        </div>
+      );
+    });
+  };
 
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5,
+      slidesToSlide: 3, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
 
   return (
     <>
       {displayMovieSel()}
-      {/* <div className="movieCarDiv">
-        <MovieCarousel className="carImages" movies={movies} />
-      </div> */}
+      <div className="movieCarDiv">
+        <Carousel
+          movies={movies}
+          swipeable={false}
+          draggable={false}
+          showDots
+          responsive={responsive}
+          ssr // means to render carousel on server-side.
+          infinite
+          // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+          autoPlaySpeed={2000}
+          keyBoardControl
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          // deviceType={this.props.deviceType}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          {movieArray()}
+        </Carousel>
+      </div>
     </>
   );
 }
@@ -71,3 +126,6 @@ export default MovieDetails;
 /*
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zn_qirpdBag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 */
+/* <div className="movieCarDiv">
+        <MovieCarousel className="carImages" movies={movies} showText="false"/>
+      </div> */
