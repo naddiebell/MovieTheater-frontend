@@ -2,10 +2,13 @@
 /* eslint-disable array-callback-return */
 import React, { useContext } from "react";
 import ReactPlayer from "react-player";
+import { useNavigate } from "@reach/router";
 import AppContext from "../../store/context";
 import "./style.css";
+import MovieCarousel from "../../Components/Carousel/index";
 
 function MovieDetails(props) {
+  const navigate = useNavigate();
   const { state } = useContext(AppContext);
   const { movies } = props;
 
@@ -13,15 +16,22 @@ function MovieDetails(props) {
     (element) => element.movieTitle === state.ticket.filmTitle
   );
 
+  const handleClick = () => {
+    navigate("/biljetter");
+  };
+
   const displayMovieSel = () => {
     const disp = aMovie.map((movieInfo) => {
       return (
-        <div className="background" key={movieInfo.id}>
-          <img
-            className="backgroundImgDiv"
-            src={movieInfo.backgroundImg}
-            alt={movieInfo.movieTitle}
-          />
+        <>
+          <div className="background" key={movieInfo.id}>
+            <img
+              className="backgroundImg"
+              src={movieInfo.backgroundImg}
+              alt={movieInfo.movieTitle}
+            />
+          </div>
+
           <h1 className="movieTitle">{movieInfo.movieTitle}</h1>
           <div className="movieDesc">
             <ReactPlayer className="moviePoster" url={movieInfo.video} />
@@ -29,37 +39,34 @@ function MovieDetails(props) {
             <div className="descAndInfo">
               <p className="descriptionTitle">Beskrivning</p>
               <p className="description">{movieInfo.description}</p>
+              <button
+                className="myButton filmBtn"
+                type="button"
+                onClick={() => handleClick()}
+              >
+                Biljetter
+              </button>
             </div>
           </div>
-        </div>
+        </>
       );
     });
     return disp;
   };
 
-  const onClick = () => {
-    
-  }
+
 
   return (
     <>
       {displayMovieSel()}
-      <button className="myButton ticketBtn" type="button">
-        Biljetter
-      </button>
+      {/* <div className="movieCarDiv">
+        <MovieCarousel className="carImages" movies={movies} />
+      </div> */}
     </>
   );
 }
 
 export default MovieDetails;
-
-{
-  /* <img
-className="moviePoster"
-src={movieInfo.img}
-alt={movieInfo.img}
-/> */
-}
 
 /*
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zn_qirpdBag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

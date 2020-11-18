@@ -93,25 +93,5 @@ function MovieCarousel(props) {
   );
 }
 
-// function MovieCarousel(props) {
-//   const { movies } = props;
-
-//   let movieArray = () => {
-//     if (movies.length === 0) {
-//       return <div></div>;
-//     }
-//     return movies.map((element, index) => {
-//       return (
-//         <div>
-//           <img src={element.img} alt={element.movieTitle} />
-//           <p className="aLegend">{element.movieTitle}</p>
-//         </div>
-//       );
-//     });
-//   };
-//   return (
-// );
-// }
-
 export default MovieCarousel;
 
