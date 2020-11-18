@@ -38,7 +38,7 @@ function MovieDetails(props) {
             <ReactPlayer className="moviePoster" url={movieInfo.video} />
 
             <div className="descAndInfo">
-              <p className="descriptionTitle">Beskrivning</p>
+              <h3 className="descriptionTitle">Beskrivning</h3>
               <p className="description">{movieInfo.description}</p>
               <button
                 className="myButton filmBtn"

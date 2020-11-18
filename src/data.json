@@ -9,7 +9,7 @@
             "childrenFriendly": "yes",
             "year": "1971",
             "time": ["15:00", "17:00", "19:00"],
-            "bakgroundImg": "https://i.insider.com/57c58e2cb6fa0217008b489f?width=1100&format=jpeg&auto=webp",
+            "backgroundImg": "https://i.insider.com/57c58e2cb6fa0217008b489f?width=1100&format=jpeg&auto=webp",
             "video": "https://youtu.be/2cBja3AbahY"
         },
         {
@@ -33,7 +33,7 @@
             "childrenFriendly": "yes",
             "year": "1939",
             "time": ["16:30", "18:30"],
-            "bakgroundImg": "https://media.newyorker.com/photos/5a5f81d31255d045857aa700/16:9/w_1280,c_limit/920511_ra475.jpg",
+            "backgroundImg": "https://media.newyorker.com/photos/5a5f81d31255d045857aa700/16:9/w_1280,c_limit/920511_ra475.jpg",
             "video": "https://youtu.be/VNugTWHnSfw"
         },
         {
@@ -45,7 +45,7 @@
             "childrenFriendly": "no",
             "year": "1959",
             "time": ["17:30", "19:30"],
-            "bakgroundImg": "https://www.capa.com/assets/img/SMS-Some-Like-it-Hot-18-da2292de77.jpg",
+            "backgroundImg": "https://www.capa.com/assets/img/SMS-Some-Like-it-Hot-18-da2292de77.jpg",
             "video": "https://youtu.be/rI_lUHOCcbc"
         },
         {
@@ -57,7 +57,7 @@
             "childrenFriendly": "no",
             "year": "1972",
             "time": ["20:00", "22:00"],
-            "bakgroundImg": "https://i.insider.com/58b05f8c54905720098b68be?width=1200&format=jpeg",
+            "backgroundImg": "https://i.insider.com/58b05f8c54905720098b68be?width=1200&format=jpeg",
             "video": "https://youtu.be/sY1S34973zA"
         },
         {
@@ -69,7 +69,7 @@
             "childrenFriendly": "no",
             "year": "1994",
             "time": ["16:30", "18:30"],
-            "bakgroundImg": "https://i.insider.com/5f6c8482c4049200115cb52b?width=1200&format=jpeg",
+            "backgroundImg": "https://i.insider.com/5f6c8482c4049200115cb52b?width=1200&format=jpeg",
             "video": "https://youtu.be/bLvqoHBptjg"
         },
         {
@@ -81,7 +81,7 @@
             "childrenFriendly": "yes",
             "year": "1987",
             "time": ["16:00", "18:00", "20:00"],
-            "bakgroundImg": "https://pyxis.nymag.com/v1/imgs/b55/24a/d47f777bdf4f54dd6c906e014b5d859aad-16-the-princess-bride.2x.rsocial.w600.jpg",
+            "backgroundImg": "https://pyxis.nymag.com/v1/imgs/b55/24a/d47f777bdf4f54dd6c906e014b5d859aad-16-the-princess-bride.2x.rsocial.w600.jpg",
             "video": "https://youtu.be/WNNUcHRiPS8"
         },
         {
@@ -93,7 +93,7 @@
             "childrenFriendly": "no",
             "year": "1979",
             "time": ["15:00", "17:00", "19:00"],
-            "bakgroundImg": "https://www.slashfilm.com/wp/wp-content/images/apocalypse-now-1.jpg",
+            "backgroundImg": "https://www.slashfilm.com/wp/wp-content/images/apocalypse-now-1.jpg",
             "video": "https://youtu.be/9l-ViOOFH-s"
         },
         {
@@ -105,7 +105,7 @@
             "childrenFriendly": "yes",
             "year": "1985",
             "time": ["17:30", "19:30"],
-            "bakgroundImg": "https://virtualfeastgallery.files.wordpress.com/2017/05/breakfastc11.png",
+            "backgroundImg": "https://virtualfeastgallery.files.wordpress.com/2017/05/breakfastc11.png",
             "video": "https://youtu.be/BSXBvor47Zs"
         },
         {
@@ -117,7 +117,7 @@
             "childrenFriendly": "no",
             "year": "1994",
             "time": ["21:00", "23:00"],
-            "bakgroundImg": "https://i2.cdn.turner.com/cnn/dam/assets/140922202153-01-pulp-fiction-horizontal-gallery.jpg",
+            "backgroundImg": "https://i2.cdn.turner.com/cnn/dam/assets/140922202153-01-pulp-fiction-horizontal-gallery.jpg",
             "video": "https://youtu.be/s7EdQ4FqbhY"
         }
     ]
