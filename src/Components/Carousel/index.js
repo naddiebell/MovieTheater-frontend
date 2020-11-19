@@ -2,7 +2,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-expressions */
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -11,21 +11,11 @@ import AppContext from "../../store/context";
 
 function MovieCarousel(props) {
   const { dispatch } = useContext(AppContext);
-  const [movieData, setMovieData] = useState({
-    filmTitle: "",
-  });
 
   const { movies } = props;
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (movieData) {
-  //     dispatch({ type: "setTicket", data: movieData });
-  //   }
-  // }, [movieData, dispatch]);
-
   const handleClick = (movieInfo) => {
-    // setMovieData({ filmTitle: element.movieTitle });
     dispatch({ type: "setMovieTitle", data: movieInfo.movieTitle });
     navigate("/filmer");
   };
@@ -94,6 +84,4 @@ function MovieCarousel(props) {
     </Carousel>
   );
 }
-
 export default MovieCarousel;
-
