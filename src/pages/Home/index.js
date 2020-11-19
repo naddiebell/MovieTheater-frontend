@@ -7,7 +7,7 @@ export default function HomePage(props) {
 
   return (
     <>
-      <div homeDiv>
+      <div className="homeDiv">
         <img
           // eslint-disable-next-line global-require
           src={require("../../background_img/retro_movie_theater.jpg")}
@@ -15,7 +15,8 @@ export default function HomePage(props) {
           className="homeImg"
         />
       </div>
-      <div className="homeBackground">
+
+      <div className="carous">
         <MovieCarousel movies={movies} />
       </div>
     </>

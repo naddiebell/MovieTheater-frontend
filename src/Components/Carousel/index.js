@@ -18,27 +18,29 @@ function MovieCarousel(props) {
   const { movies } = props;
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (movieData) {
-      dispatch({ type: "setTicket", data: movieData });
-    }
-  }, [movieData, dispatch]);
+  // useEffect(() => {
+  //   if (movieData) {
+  //     dispatch({ type: "setTicket", data: movieData });
+  //   }
+  // }, [movieData, dispatch]);
 
-  const handleClick = (element) => {
-    setMovieData({ filmTitle: element.movieTitle });
+  const handleClick = (movieInfo) => {
+    // setMovieData({ filmTitle: element.movieTitle });
+    dispatch({ type: "setMovieTitle", data: movieInfo.movieTitle });
     navigate("/filmer");
-  }
+  };
 
   const movieArray = () => {
     if (movies.length === 0) {
+      // eslint-disable-next-line react/self-closing-comp
       return <div></div>;
     }
-    return movies.map((element, index) => {
+    return movies.map((element) => {
       return (
         <div
           className="imageDiv"
           onClick={() => handleClick(element)}
-          key={index}
+          key={element.id}
         >
           <img
             src={element.img}

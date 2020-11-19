@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable array-callback-return */
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { useNavigate } from "@reach/router";
 import Carousel from "react-multi-carousel";
@@ -10,7 +12,11 @@ import "react-multi-carousel/lib/styles.css";
 
 function MovieDetails(props) {
   const navigate = useNavigate();
+  const { dispatch } = useContext(AppContext);
   const { state } = useContext(AppContext);
+  const [movieData, setMovieData] = useState({
+    filmTitle: "",
+  });
   const { movies } = props;
 
   const aMovie = movies.filter(
@@ -21,7 +27,14 @@ function MovieDetails(props) {
     navigate("/biljetter");
   };
 
+  const handleImgClick = (movieInfo) => {
+    console.log("setting ticket to", state)
+    dispatch({ type: "setMovieTitle", data: movieInfo.movieTitle });
+    navigate("/filmer");
+  };
+
   const displayMovieSel = () => {
+    console.log(aMovie, "amovie")
     const disp = aMovie.map((movieInfo) => {
       return (
         <>
@@ -61,13 +74,16 @@ function MovieDetails(props) {
     }
     return movies.map((element) => {
       return (
-        <div className="imageDiv" key={element.id}>
+        <div
+          className="imageDiv"
+          key={element.id}
+          onClick={() => handleImgClick(element)}
+        >
           <img
             src={element.img}
             alt={element.movieTitle}
             className="movieImage"
           />
-          {/* <p className="aLegend">{element.movieTitle}</p> */}
         </div>
       );
     });

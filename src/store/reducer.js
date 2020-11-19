@@ -6,6 +6,13 @@ const reducer = (state, action) => {
         ...state,
         ticket: action.data,
       };
+    case "setMovieTitle":
+      return {
+        ticket: {
+          ...state.ticket,
+          filmTitle: action.data,
+        },
+      };
     default:
       return state;
   }

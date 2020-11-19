@@ -2,7 +2,7 @@ const state = {
   ticket: {
     _id: "",
     date: "",
-    filmTitle: "",
+    filmTitle: "The Wizard of Oz",
     ticketAmount: "",
   },
 };
