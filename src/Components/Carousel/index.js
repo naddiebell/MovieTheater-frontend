@@ -2,7 +2,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-expressions */
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -11,34 +11,26 @@ import AppContext from "../../store/context";
 
 function MovieCarousel(props) {
   const { dispatch } = useContext(AppContext);
-  const [movieData, setMovieData] = useState({
-    filmTitle: "",
-  });
 
   const { movies } = props;
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (movieData) {
-      dispatch({ type: "setTicket", data: movieData });
-    }
-  }, [movieData, dispatch]);
-
-  const handleClick = (element) => {
-    setMovieData({ filmTitle: element.movieTitle });
+  const handleClick = (movieInfo) => {
+    dispatch({ type: "setMovieTitle", data: movieInfo.movieTitle });
     navigate("/filmer");
-  }
+  };
 
   const movieArray = () => {
     if (movies.length === 0) {
+      // eslint-disable-next-line react/self-closing-comp
       return <div></div>;
     }
-    return movies.map((element, index) => {
+    return movies.map((element) => {
       return (
         <div
           className="imageDiv"
           onClick={() => handleClick(element)}
-          key={index}
+          key={element.id}
         >
           <img
             src={element.img}
@@ -92,26 +84,4 @@ function MovieCarousel(props) {
     </Carousel>
   );
 }
-
-// function MovieCarousel(props) {
-//   const { movies } = props;
-
-//   let movieArray = () => {
-//     if (movies.length === 0) {
-//       return <div></div>;
-//     }
-//     return movies.map((element, index) => {
-//       return (
-//         <div>
-//           <img src={element.img} alt={element.movieTitle} />
-//           <p className="aLegend">{element.movieTitle}</p>
-//         </div>
-//       );
-//     });
-//   };
-//   return (
-// );
-// }
-
 export default MovieCarousel;
-

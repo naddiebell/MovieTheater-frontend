@@ -1,0 +1,68 @@
+.background {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.backgroundImg {
+  opacity: 0.6;
+  width: 100%;
+  max-height: 80%;
+}
+
+.movieTitle {
+  color: white;
+  z-index: 10;
+  margin: auto;
+  text-align: center;
+}
+
+.movieDesc {
+    display: flex;
+}
+
+.moviePoster {
+  z-index: 5;
+  height: 10em;
+  margin-top: 2em;
+  margin-left: 2em;
+  border: 2px solid white;
+  margin-right: 2em;
+}
+
+.descriptionTitle {
+  margin-top: 2em;  
+  z-index: 5;
+  color: green;
+}
+
+.descAndInfo {
+  height: auto;
+  width: 20em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  z-index: 5;
+  width: 30em;
+  top: 30%;
+}
+
+.movieCarDiv {
+  margin: auto;
+    width: 30%;
+    height: 300px;
+    padding-top: 4em;
+}
+
+.carImages {
+    height: 100%;
+}
