@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable func-names */
@@ -10,8 +11,6 @@ import "../../SharedStyles/Button/button.css";
 import { useNavigate } from "@reach/router";
 import AppContext from "../../store/context";
 import dates from "./dates";
-
-console.log("datesArr", dates);
 
 const backendURL = process.env.REACT_APP_BACKEND_URL;
 
@@ -31,7 +30,31 @@ export default function BuyTickets(props) {
 
   useEffect(() => {
     if (ticketData) {
-      dispatch({ type: "setTicket", data: ticketData });
+   
+      const getDay = () => {
+        if (ticketData.date.includes("måndag")) {
+          return "monday";
+        }
+        if (ticketData.date.includes("tisdag")) {
+          return "tisdag";
+        }
+        if (ticketData.date.includes("onsdag")) {
+          return "onsdag";
+        }
+        if (ticketData.date.includes("torsdag")) {
+          return "torsdag";
+        }
+        if (ticketData.date.includes("fredag")) {
+          return "fredag";
+        }
+        if (ticketData.date.includes("lördag")) {
+          return "lördag";
+        }
+        if (ticketData.date.includes("söndag")) {
+          return "söndag";
+        }
+      };
+      getDay();
     }
   }, [ticketData, dispatch]);
 
@@ -44,10 +67,9 @@ export default function BuyTickets(props) {
     if (movies.length === 0) {
       return;
     }
-    // eslint-disable-next-line consistent-return
-    return movies.map((element, i) => {
+    return movies.map((element) => {
       return (
-        <option value={element.movieTitle} key={i}>
+        <option value={element.movieTitle} key={element.id}>
           {element.movieTitle}
         </option>
       );
@@ -72,6 +94,7 @@ export default function BuyTickets(props) {
     const { value } = e.target;
     const { name } = e.target;
     setTicketData({ ...ticketData, [name]: value });
+    dispatch({ type: "setTicket", data: ticketData });
   };
 
   // eslint-disable-next-line consistent-return
@@ -84,12 +107,12 @@ export default function BuyTickets(props) {
       const { img } = aMovie[0];
 
       const { movieTitle } = aMovie[0];
-      const movieTimes = aMovie[0].time.map((element, index) => (
+      const movieTimes = aMovie[0].time.map((element) => (
         <button
           onClick={handleButton}
           type="button"
           className="myButton"
-          key={index}
+          key={element.id}
         >
           {element}
         </button>
@@ -133,7 +156,6 @@ export default function BuyTickets(props) {
       <h1 className="pageH1">Biljetter till föreställningar i Stockholm</h1>
       <form onSubmit={(e) => handleDisplay(e)} className="form">
         <label htmlFor="date">
-          Välj en datum:
           <select
             id="date"
             type="date"
@@ -141,20 +163,19 @@ export default function BuyTickets(props) {
             onChange={handleChange}
             name="date"
           >
-            <option defaultValue="default">-</option>
+            <option defaultValue="default">Välj en datum</option>
             {selectDates()}
           </select>
         </label>
 
         <label htmlFor="filmTitle">
-          Välj en film:
           <select
             id="filmTitle"
             value={ticketData.filmTitle}
             onChange={handleChange}
             name="filmTitle"
           >
-            <option defaultValue="default">-</option>
+            <option defaultValue="default">Välj en film:</option>
             {movieTitles()}
           </select>
         </label>
@@ -171,7 +192,9 @@ export default function BuyTickets(props) {
             max="25"
           />
         </label>
-        <input type="submit" />
+        <button className="myButton" type="submit">
+          Visa Urval
+        </button>
       </form>
 
       <div className="background">
