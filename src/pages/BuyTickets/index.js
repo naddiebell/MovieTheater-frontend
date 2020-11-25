@@ -28,35 +28,35 @@ export default function BuyTickets(props) {
 
   const { date, filmTitle, ticketAmount } = ticketData;
 
-  useEffect(() => {
-    if (ticketData) {
-   
-      const getDay = () => {
-        if (ticketData.date.includes("måndag")) {
-          return "monday";
-        }
-        if (ticketData.date.includes("tisdag")) {
-          return "tisdag";
-        }
-        if (ticketData.date.includes("onsdag")) {
-          return "onsdag";
-        }
-        if (ticketData.date.includes("torsdag")) {
-          return "torsdag";
-        }
-        if (ticketData.date.includes("fredag")) {
-          return "fredag";
-        }
-        if (ticketData.date.includes("lördag")) {
-          return "lördag";
-        }
-        if (ticketData.date.includes("söndag")) {
-          return "söndag";
-        }
-      };
-      getDay();
+  const getDay = (ticketDate) => {
+    if (ticketDate.includes("måndag")) {
+      return "måndag";
     }
-  }, [ticketData, dispatch]);
+    if (ticketDate.includes("tisdag")) {
+      return "tisdag";
+    }
+    if (ticketDate.includes("onsdag")) {
+      return "onsdag";
+    }
+    if (ticketDate.includes("torsdag")) {
+      return "torsdag";
+    }
+    if (ticketDate.includes("fredag")) {
+      return "fredag";
+    }
+    if (ticketDate.includes("lördag")) {
+      return "lördag";
+    }
+    if (ticketDate.includes("söndag")) {
+      return "söndag";
+    }
+  };
+
+  useEffect(() => {
+    dispatch({ type: "setTicket", data: ticketData });
+
+    getDay(ticketData.date);
+  }, [dispatch, ticketData]);
 
   const handleButton = (e) => {
     e.preventDefault();
@@ -66,6 +66,19 @@ export default function BuyTickets(props) {
   const movieTitles = () => {
     if (movies.length === 0) {
       return;
+    }
+    if (ticketData.date) {
+      const day = getDay(ticketData.date);
+      const getMovieByDate = movies.filter((movie) => {
+        return movie.daysPlaying.includes(day);
+      });
+      return getMovieByDate.map((aMovie) => {
+        return (
+          <option value={aMovie.movieTitle} key={aMovie.id}>
+            {aMovie.movieTitle}
+          </option>
+        );
+      });
     }
     return movies.map((element) => {
       return (
@@ -90,11 +103,10 @@ export default function BuyTickets(props) {
     });
   };
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     const { value } = e.target;
     const { name } = e.target;
     setTicketData({ ...ticketData, [name]: value });
-    dispatch({ type: "setTicket", data: ticketData });
   };
 
   // eslint-disable-next-line consistent-return
@@ -150,7 +162,6 @@ export default function BuyTickets(props) {
       });
   }
 
-  console.log("aaaa", state);
   return (
     <>
       <h1 className="pageH1">Biljetter till föreställningar i Stockholm</h1>

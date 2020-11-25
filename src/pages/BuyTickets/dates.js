@@ -33,7 +33,7 @@ datePlusTen.setDate(datePlusTen.getDate() + 10);
 const days = [
   "söndag",
   "måndag",
-  "tisday",
+  "tisdag",
   "onsdag",
   "torsdag",
   "fredag",
