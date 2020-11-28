@@ -17,6 +17,7 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 export default function BuyTickets(props) {
   const { state, dispatch } = useContext(AppContext);
   const [displayTicket, setDisplayTicket] = useState(false);
+  const [displayMovieByDate, setDisplayMovieByDate] = useState(false);
   const [ticketData, setTicketData] = useState({
     date: "",
     filmTitle: "",
@@ -60,6 +61,7 @@ export default function BuyTickets(props) {
 
   const handleButton = (e) => {
     e.preventDefault();
+    console.log("hello");
     navigate("/platser");
   };
 
@@ -67,6 +69,9 @@ export default function BuyTickets(props) {
     if (movies.length === 0) {
       return;
     }
+    // if (state.ticket.filmTitle === "Se alla filmer:") {
+    //   setDisplayMovieByDate(false);
+    // }
     if (ticketData.date) {
       const day = getDay(ticketData.date);
       const getMovieByDate = movies.filter((movie) => {
@@ -94,53 +99,61 @@ export default function BuyTickets(props) {
       return;
     }
     // eslint-disable-next-line consistent-return
-    return dates.map((dateE, i) => {
+    return dates.map((dateE) => {
       return (
-        <option value={dateE} key={i}>
+        <option value={dateE} key={dateE}>
           {dateE}
         </option>
       );
     });
   };
 
+  const renderMovie = (aMovie, aDate) => {
+    return (
+      <div className="backgroundShowSelection">
+        <div className="flexMovItems">
+          <div>
+            <img
+              src={aMovie.img}
+              alt={aMovie.movieTitle}
+              className="movieImg"
+            />
+          </div>
+          <div className="movieDetails">
+            {aMovie.movieTitle}
+            <p>Datum: {aDate} </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const showSelection = (selectedDate, selectedMovie) => {
+    if(!selectedDate && !selectedMovie){
+      return
+    }
+    const day = getDay(selectedDate);
+    console.log("selected Items", selectedDate, selectedMovie)
+    let moviesArr = movies.slice();
+    if (selectedDate !== "") {
+      moviesArr = moviesArr.filter((movieInfo) => {
+        return movieInfo.daysPlaying.includes(day);
+      });
+      console.log("hello1")
+    }
+    if (selectedMovie !=="") {
+      console.log("selectedMovie")
+      moviesArr = moviesArr.filter((movieInfo) => {
+        return movieInfo.movieTitle === selectedMovie;
+      });
+    }
+    return moviesArr.map((aMovie) => renderMovie(aMovie, selectedDate));
+  };
+
   const handleChange = (e) => {
     const { value } = e.target;
     const { name } = e.target;
     setTicketData({ ...ticketData, [name]: value });
-  };
-
-  // eslint-disable-next-line consistent-return
-  const showSelection = () => {
-    if (date !== "" && filmTitle !== "" && ticketAmount) {
-      const aMovie = movies.filter(
-        (element) => element.movieTitle === filmTitle
-      );
-
-      const { img } = aMovie[0];
-
-      const { movieTitle } = aMovie[0];
-      const movieTimes = aMovie[0].time.map((element) => (
-        <button
-          onClick={handleButton}
-          type="button"
-          className="myButton"
-          key={element.id}
-        >
-          {element}
-        </button>
-      ));
-
-      const filmDisplay = (
-        <div>
-          {movieTitle}
-          <p>Datum: {date} </p>
-          <img src={img} alt={movieTitle} className="movieImg" />
-          {movieTimes}
-        </div>
-      );
-
-      return filmDisplay;
-    }
   };
 
   function handleDisplay(e) {
@@ -187,6 +200,7 @@ export default function BuyTickets(props) {
             name="filmTitle"
           >
             <option defaultValue="default">Välj en film:</option>
+
             {movieTitles()}
           </select>
         </label>
@@ -209,11 +223,11 @@ export default function BuyTickets(props) {
       </form>
 
       <div className="background">
-        {displayTicket && (
-          <>
-            <div>{showSelection()}</div>
-          </>
-        )}
+        <>
+          <div className="showSelection">
+            {showSelection(ticketData.date, ticketData.filmTitle)}
+          </div>
+        </>
       </div>
     </>
   );
