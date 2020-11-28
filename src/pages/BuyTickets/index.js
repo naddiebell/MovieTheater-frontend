@@ -98,7 +98,6 @@ export default function BuyTickets(props) {
     if (dates.length === 0) {
       return;
     }
-    // eslint-disable-next-line consistent-return
     return dates.map((dateE) => {
       return (
         <option value={dateE} key={dateE}>
@@ -122,27 +121,36 @@ export default function BuyTickets(props) {
           <div className="movieDetails">
             {aMovie.movieTitle}
             <p>Datum: {aDate} </p>
+            <p>{aMovie.time}</p>
           </div>
         </div>
       </div>
     );
   };
 
+  const renderMovieTimeBtn = (movieArray) => {
+    return movieArray.map((aMovie) => {
+      return (
+        <div>
+          <button type="button">{aMovie.time}</button>
+        </div>
+      );
+    });
+  };
+
   const showSelection = (selectedDate, selectedMovie) => {
-    if(!selectedDate && !selectedMovie){
-      return
+    if (!selectedDate && !selectedMovie) {
+      return;
     }
     const day = getDay(selectedDate);
-    console.log("selected Items", selectedDate, selectedMovie)
+    console.log("selected Items", selectedDate, selectedMovie);
     let moviesArr = movies.slice();
     if (selectedDate !== "") {
       moviesArr = moviesArr.filter((movieInfo) => {
         return movieInfo.daysPlaying.includes(day);
       });
-      console.log("hello1")
     }
-    if (selectedMovie !=="") {
-      console.log("selectedMovie")
+    if (selectedMovie !== "") {
       moviesArr = moviesArr.filter((movieInfo) => {
         return movieInfo.movieTitle === selectedMovie;
       });
@@ -158,7 +166,6 @@ export default function BuyTickets(props) {
 
   function handleDisplay(e) {
     e.preventDefault();
-    setDisplayTicket(true);
     axios
       .post(`${backendURL}/api/v1/tickets`, {
         filmName: filmTitle,

@@ -6,11 +6,13 @@ import React, { useContext } from "react";
 import ReactPlayer from "react-player";
 import { useNavigate } from "@reach/router";
 import Carousel from "react-multi-carousel";
+import { useTranslation } from "react-i18next";
 import AppContext from "../../store/context";
 import "./style.css";
 import "react-multi-carousel/lib/styles.css";
 
 function MovieDetails(props) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { dispatch } = useContext(AppContext);
   const { state } = useContext(AppContext);
@@ -46,14 +48,14 @@ function MovieDetails(props) {
             <ReactPlayer className="moviePoster" url={movieInfo.video} />
 
             <div className="descAndInfo">
-              <h3 className="descriptionTitle">Beskrivning</h3>
+              <h3 className="descriptionTitle">{t("Description")}</h3>
               <p className="description">{movieInfo.description}</p>
               <button
                 className="myButton filmBtn"
                 type="button"
                 onClick={() => handleClick()}
               >
-                Biljetter
+                {t("Tickets Button")}
               </button>
             </div>
           </div>
