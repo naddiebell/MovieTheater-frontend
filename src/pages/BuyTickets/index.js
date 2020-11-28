@@ -16,8 +16,6 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 export default function BuyTickets(props) {
   const { state, dispatch } = useContext(AppContext);
-  const [displayTicket, setDisplayTicket] = useState(false);
-  const [displayMovieByDate, setDisplayMovieByDate] = useState(false);
   const [ticketData, setTicketData] = useState({
     date: "",
     filmTitle: "",
@@ -61,7 +59,6 @@ export default function BuyTickets(props) {
 
   const handleButton = (e) => {
     e.preventDefault();
-    console.log("hello");
     navigate("/platser");
   };
 
@@ -85,6 +82,9 @@ export default function BuyTickets(props) {
         );
       });
     }
+    if (ticketData.filmTitle === "Välj en film:"){
+      setTicketData({ ...ticketData, date: "", filmTitle: "" });
+    } 
     return movies.map((element) => {
       return (
         <option value={element.movieTitle} key={element.id}>
@@ -182,6 +182,11 @@ export default function BuyTickets(props) {
       });
   }
 
+  const handleClearButton = (e) => {
+    e.preventDefault();
+    setTicketData({ ...ticketData, date: "", filmTitle: "" });
+  };
+
   return (
     <>
       <h1 className="pageH1">Biljetter till föreställningar i Stockholm</h1>
@@ -228,6 +233,12 @@ export default function BuyTickets(props) {
           Visa Urval
         </button>
       </form>
+
+      <div>
+        <button type="button" className="myButton" onClick={handleClearButton}>
+          Clear Selections
+        </button>
+      </div>
 
       <div className="background">
         <>

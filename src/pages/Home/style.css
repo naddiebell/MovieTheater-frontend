@@ -27,5 +27,8 @@
   .backCar {
       display: flex;
       z-index: 20;
-      position: 
+  }
+
+  .mainHeader {
+      text-align: center;
   }

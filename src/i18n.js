@@ -10,6 +10,8 @@ const resources = {
       "Tickets Button": "Biljetter",
       "Description": "Beskrivning",
       "About Us": "Om Oss",
+      "Home Header": "Stockholms Amerikanska Klassikerfilm",
+      "Clear Selections": "tydliga val",
     },
   },
   en: {
@@ -18,6 +20,8 @@ const resources = {
       "Tickets Button": "Tickets",
       "Description": "Description",
       "About Us": "About Us",
+      "Home Header": "American Classic Movie Theater",
+      "Clear Selections": "Clear Selections",
     },
   },
 };

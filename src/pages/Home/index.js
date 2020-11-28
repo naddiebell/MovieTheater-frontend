@@ -1,8 +1,10 @@
 import React from "react";
 import "./style.css";
+import { useTranslation } from "react-i18next";
 import MovieCarousel from "../../Components/Carousel/index";
 
 export default function HomePage(props) {
+  const { t } = useTranslation();
   const { movies } = props;
 
   return (
@@ -15,6 +17,7 @@ export default function HomePage(props) {
           className="homeImg"
         />
       </div>
+      <h1 className="mainHeader">{t("Home Header")}</h1>
 
       <div className="carous">
         <MovieCarousel movies={movies} />
