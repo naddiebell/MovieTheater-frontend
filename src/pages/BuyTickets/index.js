@@ -110,7 +110,6 @@ export default function BuyTickets(props) {
   };
 
   const renderMovie = (aMovie, aDate) => {
-    console.log(aMovie.time);
     const timeButton = aMovie.time.map((movieTime) => {
       return (
         <button onClick={handleButton} type="button">
@@ -154,7 +153,6 @@ export default function BuyTickets(props) {
       return;
     }
     const day = getDay(selectedDate);
-    console.log("selected Items", selectedDate, selectedMovie);
     let moviesArr = movies.slice();
     if (selectedDate !== "") {
       moviesArr = moviesArr.filter((movieInfo) => {

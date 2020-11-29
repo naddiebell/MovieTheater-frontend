@@ -10,6 +10,9 @@ export default function SelectSeats() {
   // eslint-disable-next-line no-unused-vars
   const [displaySeat, setDisplaySeat] = useState(false);
 
+  let popCornEmoji = String.fromCodePoint(0x1F37F);
+
+
   const navigate = useNavigate();
   const { state } = useContext(AppContext);
 
@@ -21,7 +24,7 @@ export default function SelectSeats() {
           const currentSeat = seatValue.slice();
 
           if (currentSeat[i] === null) {
-            currentSeat[i] = "X";
+            currentSeat[i] = popCornEmoji;
             setSeatValue(currentSeat);
           } else {
             currentSeat[i] = null;
@@ -32,10 +35,12 @@ export default function SelectSeats() {
     );
   }
 
+  let emoji1 = String.fromCodePoint(0x1F354);
+ 
   function getSeats() {
     const indexes = [];
     for (let i = 0; i < seatValue.length; i += 1) {
-      if (seatValue[i] === "X") {
+      if (seatValue[i] === popCornEmoji) {
         indexes.push(i);
       }
     }
@@ -59,48 +64,50 @@ export default function SelectSeats() {
   return (
     <>
       <div className="seatStyle">
-        <div className="board-row">
-          {renderSeat(0)}
-          {renderSeat(1)}
-          {renderSeat(2)}
-          {renderSeat(3)}
-          {renderSeat(4)}
-        </div>
+        <div className="seatsBackground">
+          <div className="board-row row1">
+            {renderSeat(0)}
+            {renderSeat(1)}
+            {renderSeat(2)}
+            {renderSeat(3)}
+            {renderSeat(4)}
+          </div>
 
-        <div className="board-row">
-          {renderSeat(5)}
-          {renderSeat(6)}
-          {renderSeat(7)}
-          {renderSeat(8)}
-          {renderSeat(9)}
-        </div>
+          <div className="board-row row2">
+            {renderSeat(5)}
+            {renderSeat(6)}
+            {renderSeat(7)}
+            {renderSeat(8)}
+            {renderSeat(9)}
+          </div>
 
-        <div className="board-row">
-          {renderSeat(10)}
-          {renderSeat(11)}
-          {renderSeat(12)}
-          {renderSeat(13)}
-          {renderSeat(14)}
-        </div>
+          <div className="board-row row3">
+            {renderSeat(10)}
+            {renderSeat(11)}
+            {renderSeat(12)}
+            {renderSeat(13)}
+            {renderSeat(14)}
+          </div>
 
-        <div className="board-row">
-          {renderSeat(15)}
-          {renderSeat(16)}
-          {renderSeat(17)}
-          {renderSeat(18)}
-          {renderSeat(19)}
-        </div>
+          <div className="board-row row4">
+            {renderSeat(15)}
+            {renderSeat(16)}
+            {renderSeat(17)}
+            {renderSeat(18)}
+            {renderSeat(19)}
+          </div>
 
-        <div className="board-row">
-          {renderSeat(20)}
-          {renderSeat(21)}
-          {renderSeat(22)}
-          {renderSeat(23)}
-          {renderSeat(24)}
+          <div className="board-row row5">
+            {renderSeat(20)}
+            {renderSeat(21)}
+            {renderSeat(22)}
+            {renderSeat(23)}
+            {renderSeat(24)}
+          </div>
         </div>
       </div>
       <button onClick={handleClick} type="button" className="myButton">
-        Välj Platser
+        Välj Platser 🍿     
       </button>
       <p>{getSeats()}</p>
       <p>Alla biljetter är 80 kr</p>

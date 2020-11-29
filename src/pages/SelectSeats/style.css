@@ -1,6 +1,9 @@
 .seatStyle {
-  width: 100%;
-  margin: 0 auto;
+  display: flex;
+}
+
+.board-row {
+  margin-top: 1em;
 }
 
 .board-row:after {
@@ -8,4 +11,8 @@
     content: "";
     display: table;
   }
-  
+
+.seatsBackground {
+  margin: 0 auto;
+}
+
