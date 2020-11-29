@@ -4,6 +4,7 @@
     position: relative;
     margin: 3rem;
     z-index: 10;
+    border: 2px solid white;
 }
 
 .form {
@@ -36,4 +37,9 @@
 
 .movieDetails {
     margin-top: 3rem;
+}
+
+.movTimeBtn {
+    margin-left: 10px;
+    margin-right: 10px;
 }

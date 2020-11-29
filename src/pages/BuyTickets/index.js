@@ -142,8 +142,8 @@ export default function BuyTickets(props) {
   const renderMovieTimeBtn = (movieArray) => {
     return movieArray.map((aMovie) => {
       return (
-        <div>
-          <button type="button">{aMovie.time}</button>
+        <div className="movTimeBtn">
+          <button type="button" className="myButton" >{aMovie.time}</button>
         </div>
       );
     });
