@@ -200,8 +200,11 @@ export default function BuyTickets(props) {
 
   return (
     <>
-      <h1 className="pageH1">Biljetter till föreställningar i Stockholm</h1>
+      <h1 className="pageH1">{t("Ticket Page H1")}</h1>
       <form className="form">
+        <button type="button" className="myButton" onClick={handleClearButton}>
+          {t("Clear Selections")}
+        </button>
         <label htmlFor="date">
           <select
             id="date"
@@ -241,12 +244,6 @@ export default function BuyTickets(props) {
           />
         </label>
       </form>
-
-      <div>
-        <button type="button" className="myButton" onClick={handleClearButton}>
-          Clear Selections
-        </button>
-      </div>
 
       <div className="background">
         <>

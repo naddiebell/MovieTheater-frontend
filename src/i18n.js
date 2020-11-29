@@ -11,7 +11,8 @@ const resources = {
       "Description": "Beskrivning",
       "About Us": "Om Oss",
       "Home Header": "Stockholms Amerikanska Klassikerfilm",
-      "Clear Selections": "tydliga val",
+      "Clear Selections": "Tydliga",
+      "Ticket Page H1": "Biljetter till föreställningar i Stockholm",
     },
   },
   en: {
@@ -21,7 +22,8 @@ const resources = {
       "Description": "Description",
       "About Us": "About Us",
       "Home Header": "American Classic Movie Theater",
-      "Clear Selections": "Clear Selections",
+      "Clear Selections": "Clear",
+      "Ticket Page H1": "Tickets for Movies in Stockholm",
     },
   },
 };
