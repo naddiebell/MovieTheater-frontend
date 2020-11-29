@@ -5,6 +5,7 @@
 /* eslint-disable no-console */
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import "../../Components/Card/card.css";
 import "./style.css";
 import "../../SharedStyles/Button/button.css";
@@ -15,6 +16,7 @@ import dates from "./dates";
 const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 export default function BuyTickets(props) {
+  const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const [ticketData, setTicketData] = useState({
     date: "",
@@ -82,9 +84,9 @@ export default function BuyTickets(props) {
         );
       });
     }
-    if (ticketData.filmTitle === "Välj en film:"){
+    if (ticketData.filmTitle === "Välj en film:") {
       setTicketData({ ...ticketData, date: "", filmTitle: "" });
-    } 
+    }
     return movies.map((element) => {
       return (
         <option value={element.movieTitle} key={element.id}>
@@ -108,6 +110,15 @@ export default function BuyTickets(props) {
   };
 
   const renderMovie = (aMovie, aDate) => {
+    console.log(aMovie.time);
+    const timeButton = aMovie.time.map((movieTime) => {
+      return (
+        <button onClick={handleButton} type="button">
+          {movieTime}
+        </button>
+      );
+    });
+
     return (
       <div className="backgroundShowSelection">
         <div className="flexMovItems">
@@ -121,7 +132,7 @@ export default function BuyTickets(props) {
           <div className="movieDetails">
             {aMovie.movieTitle}
             <p>Datum: {aDate} </p>
-            <p>{aMovie.time}</p>
+            <p>{timeButton}</p>
           </div>
         </div>
       </div>
@@ -190,7 +201,7 @@ export default function BuyTickets(props) {
   return (
     <>
       <h1 className="pageH1">Biljetter till föreställningar i Stockholm</h1>
-      <form onSubmit={(e) => handleDisplay(e)} className="form">
+      <form className="form">
         <label htmlFor="date">
           <select
             id="date"
@@ -218,7 +229,6 @@ export default function BuyTickets(props) {
         </label>
 
         <label htmlFor="quantity">
-          Biljetter:
           <input
             value={ticketData.ticketAmount}
             onChange={handleChange}
@@ -227,11 +237,9 @@ export default function BuyTickets(props) {
             name="ticketAmount"
             min="0"
             max="25"
+            placeholder="Biljetter"
           />
         </label>
-        <button className="myButton" type="submit">
-          Visa Urval
-        </button>
       </form>
 
       <div>
@@ -250,3 +258,5 @@ export default function BuyTickets(props) {
     </>
   );
 }
+
+// onSubmit={(e) => handleDisplay(e)}

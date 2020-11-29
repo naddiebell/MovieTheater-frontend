@@ -2,15 +2,15 @@
     "movies": [
         {
             "id": 1,
-            "movieTitle": "Willy Wonka and The Chocolate Factory",
-            "img": "https://i.pinimg.com/originals/1f/c1/09/1fc109397dda3d5099ae035d47f34a3c.jpg",
-            "description": "När Willy Wonka bestämmer sig för att släppa in fem barn i sin chokladfabrik, bestämmer han sig för att släppa fem gyllene biljetter i fem separata chokladkakor, vilket ger total kaos. Biljetterna börjar hittas, med den femte som går till en mycket speciell pojke, som heter Charlie Bucket. Med sin farfar går Charlie med resten av barnen för att uppleva den mest fantastiska fabriken någonsin. Men inte allt går enligt plan inom fabriken.",
-            "daysPlaying": ["måndag", "onsdag"],
-            "childrenFriendly": "yes",
-            "year": "1971",
+            "movieTitle": "Apocalypse Now",
+            "img": "https://static.rogerebert.com/uploads/movie/movie_poster/apocalypse-now-1979/large_xytHTHqtQlXtzyJTtlqnVjvDdqd.jpg",
+            "description": "En amerikansk arméofficer som tjänstgör i Vietnam har till uppgift att mörda en övergiven specialstyrkoröverste som ser sig själv som en gud.",
+            "daysPlaying": ["lördag", "onsdag", "fredag"],
+            "childrenFriendly": "no",
+            "year": "1979",
             "time": ["15:00", "17:00", "19:00"],
-            "backgroundImg": "https://i.insider.com/57c58e2cb6fa0217008b489f?width=1100&format=jpeg&auto=webp",
-            "video": "https://youtu.be/2cBja3AbahY"
+            "backgroundImg": "https://www.slashfilm.com/wp/wp-content/images/apocalypse-now-1.jpg",
+            "video": "https://youtu.be/9l-ViOOFH-s"
         },
         {
             "id": 2,
@@ -26,18 +26,6 @@
         },
         {
             "id": 3,
-            "movieTitle": "The Wizard of Oz",
-            "img": "https://movieposters2.com/images/1394042-b.jpg",
-            "description": "Dorothy Gale sopas bort från en gård i Kansas till ett magiskt land Oz i en tornado och ger sig ut på en jakt med sina nya vänner för att se trollkarlen som kan hjälpa henne att återvända hem till Kansas och hjälpa sina vänner också.",
-            "daysPlaying": ["lördag", "onsdag", "fredag"],
-            "childrenFriendly": "yes",
-            "year": "1939",
-            "time": ["16:30", "18:30"],
-            "backgroundImg": "https://media.newyorker.com/photos/5a5f81d31255d045857aa700/16:9/w_1280,c_limit/920511_ra475.jpg",
-            "video": "https://youtu.be/VNugTWHnSfw"
-        },
-        {
-            "id": 4,
             "movieTitle": "Some Like It Hot",
             "img": "https://www.filmsite.org/posters/somelikeithot.jpg",
             "description": "Efter att två manliga musiker bevittnat en mobbshit flyr de från staten i ett helt kvinnligt band förklädd till kvinnor, men ytterligare komplikationer inträffade.",
@@ -47,6 +35,18 @@
             "time": ["17:30", "19:30"],
             "backgroundImg": "https://www.capa.com/assets/img/SMS-Some-Like-it-Hot-18-da2292de77.jpg",
             "video": "https://youtu.be/rI_lUHOCcbc"
+        },
+        {
+            "id": 4,
+            "movieTitle": "The Wizard of Oz",
+            "img": "https://movieposters2.com/images/1394042-b.jpg",
+            "description": "Dorothy Gale sopas bort från en gård i Kansas till ett magiskt land Oz i en tornado och ger sig ut på en jakt med sina nya vänner för att se trollkarlen som kan hjälpa henne att återvända hem till Kansas och hjälpa sina vänner också.",
+            "daysPlaying": ["lördag", "onsdag", "fredag"],
+            "childrenFriendly": "yes",
+            "year": "1939",
+            "time": ["16:30", "18:30"],
+            "backgroundImg": "https://media.newyorker.com/photos/5a5f81d31255d045857aa700/16:9/w_1280,c_limit/920511_ra475.jpg",
+            "video": "https://youtu.be/VNugTWHnSfw"
         },
         {
             "id": 5,
@@ -86,15 +86,15 @@
         },
         {
             "id": 8,
-            "movieTitle": "Apocalypse Now",
-            "img": "https://static.rogerebert.com/uploads/movie/movie_poster/apocalypse-now-1979/large_xytHTHqtQlXtzyJTtlqnVjvDdqd.jpg",
-            "description": "En amerikansk arméofficer som tjänstgör i Vietnam har till uppgift att mörda en övergiven specialstyrkoröverste som ser sig själv som en gud.",
-            "daysPlaying": ["lördag", "onsdag", "fredag"],
-            "childrenFriendly": "no",
-            "year": "1979",
+            "movieTitle": "Willy Wonka and The Chocolate Factory",
+            "img": "https://i.pinimg.com/originals/1f/c1/09/1fc109397dda3d5099ae035d47f34a3c.jpg",
+            "description": "När Willy Wonka bestämmer sig för att släppa in fem barn i sin chokladfabrik, bestämmer han sig för att släppa fem gyllene biljetter i fem separata chokladkakor, vilket ger total kaos. Biljetterna börjar hittas, med den femte som går till en mycket speciell pojke, som heter Charlie Bucket. Med sin farfar går Charlie med resten av barnen för att uppleva den mest fantastiska fabriken någonsin. Men inte allt går enligt plan inom fabriken.",
+            "daysPlaying": ["måndag", "onsdag"],
+            "childrenFriendly": "yes",
+            "year": "1971",
             "time": ["15:00", "17:00", "19:00"],
-            "backgroundImg": "https://www.slashfilm.com/wp/wp-content/images/apocalypse-now-1.jpg",
-            "video": "https://youtu.be/9l-ViOOFH-s"
+            "backgroundImg": "https://i.insider.com/57c58e2cb6fa0217008b489f?width=1100&format=jpeg&auto=webp",
+            "video": "https://youtu.be/2cBja3AbahY"
         },
         {
             "id": 9,
