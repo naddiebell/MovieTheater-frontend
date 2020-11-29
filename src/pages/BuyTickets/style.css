@@ -1,6 +1,6 @@
 .movieImg {
     float: left;
-    max-height: 18rem;
+    max-height: 16rem;
     position: relative;
     margin: 3rem;
     z-index: 10;
@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-top: 10%
+    padding-top: 5%;
     /* position: absolute;
     top: 40%; */
 }
@@ -30,7 +30,7 @@
 }
 
 .showSelection {
-    margin-top: 26rem;
+    margin-top: 20rem;
 }
 
 .movieDetails {
