@@ -153,6 +153,7 @@ export default function BuyTickets(props) {
       return;
     }
     const day = getDay(selectedDate);
+
     let moviesArr = movies.slice();
     if (selectedDate !== "") {
       moviesArr = moviesArr.filter((movieInfo) => {

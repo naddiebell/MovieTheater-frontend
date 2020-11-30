@@ -1,20 +1,38 @@
-import React, { useState, useContext } from "react";
+/* eslint-disable no-console */
+/* eslint-disable object-shorthand */
+import React, { useState, useContext, useEffect } from "react";
 import "./style.css";
-import { useNavigate } from "@reach/router";
+import axios from "axios";
+import { loadStripe } from "@stripe/stripe-js";
 import Seat from "../../Components/Seat/Seat";
 import "../../SharedStyles/Button/button.css";
 import AppContext from "../../store/context";
 
+const baseUrl = process.env.REACT_APP_BACKEND_URL;
+const stripePK = process.env.REACT_APP_STRIPE_PUBLISHABLE;
+const stripePromise = loadStripe(stripePK);
+
 export default function SelectSeats() {
   const [seatValue, setSeatValue] = useState(Array(25).fill(null));
+  const { state, dispatch } = useContext(AppContext);
   // eslint-disable-next-line no-unused-vars
   const [displaySeat, setDisplaySeat] = useState(false);
+  const [userData, setUserData] = useState({
+    date: state.ticket.date,
+    filmTitle: state.ticket.filmTitle,
+    ticketAmount: state.ticket.ticketAmount,
+    userName: "",
+    userEmail: "",
+    price: "",
+  });
 
-  let popCornEmoji = String.fromCodePoint(0x1F37F);
+  useEffect(() => {
+    dispatch({ type: "setTicket", data: userData });
+  }, [dispatch, userData]);
 
+  const indexes = [];
 
-  const navigate = useNavigate();
-  const { state } = useContext(AppContext);
+  const popCornEmoji = String.fromCodePoint(0x1f37f);
 
   function renderSeat(i) {
     return (
@@ -35,10 +53,7 @@ export default function SelectSeats() {
     );
   }
 
-  let emoji1 = String.fromCodePoint(0x1F354);
- 
   function getSeats() {
-    const indexes = [];
     for (let i = 0; i < seatValue.length; i += 1) {
       if (seatValue[i] === popCornEmoji) {
         indexes.push(i);
@@ -56,15 +71,63 @@ export default function SelectSeats() {
     return `Dina valda platser är: ${seating}`;
   }
 
-  const handleClick = () => {
-    setDisplaySeat(true);
-    navigate("/verify");
+  const totalPrice = (numberOfSeats) => {
+    return numberOfSeats * 8000;
+  };
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    const { name } = e.target;
+    const priceTot = totalPrice(indexes.length);
+    setUserData({
+      ...userData,
+      [name]: value,
+      ticketAmount: indexes.length,
+      price: priceTot,
+    });
+  };
+
+  const createTicket = async () => {
+    const response = await axios.post(`${baseUrl}/api/v1/tickets/`, {
+      filmName: state.ticket.filmTitle,
+      date: state.ticket.date,
+      seatAmount: userData.ticketAmount,
+      price: state.ticket.price,
+      userName: userData.userName,
+      userEmail: userData.userEmail,
+    });
+    return response.data;
+  };
+
+  const handlePay = async (e) => {
+    e.preventDefault();
+    const ticket = await createTicket();
+    console.log("ticket", ticket);
+
+    const stripe = await stripePromise;
+    const res = await axios.post(`${baseUrl}/create-checkout-session`, {
+      ticket,
+    });
+
+    console.log(res);
+
+    const session = res.data;
+
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      console.log(result.error.message);
+    }
   };
 
   return (
     <>
+      <h1>Välj dina platser</h1>
       <div className="seatStyle">
         <div className="seatsBackground">
+          <div className="screen">Screen</div>
           <div className="board-row row1">
             {renderSeat(0)}
             {renderSeat(1)}
@@ -105,10 +168,30 @@ export default function SelectSeats() {
             {renderSeat(24)}
           </div>
         </div>
+        <form className="form">
+          <label htmlFor="userName">
+            <input
+              type="text"
+              id="userName"
+              name="userName"
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </label>
+          <label htmlFor="userEmail">
+            <input
+              type="text"
+              id="userEmail"
+              name="userEmail"
+              placeholder="Email"
+              onChange={handleChange}
+            />
+          </label>
+          <button type="button" onClick={handlePay} className="myButton">
+            Pay
+          </button>
+        </form>
       </div>
-      <button onClick={handleClick} type="button" className="myButton">
-        Välj Platser 🍿     
-      </button>
       <p>{getSeats()}</p>
       <p>Alla biljetter är 80 kr</p>
       <p>{state.ticket.filmTitle}</p>

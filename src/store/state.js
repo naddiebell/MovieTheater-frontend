@@ -4,6 +4,9 @@ const state = {
     date: "",
     filmTitle: "The Wizard of Oz",
     ticketAmount: "",
+    userName: "",
+    userEmail: "",
+    price: "",
   },
 };
 

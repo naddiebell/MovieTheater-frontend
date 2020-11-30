@@ -16,3 +16,8 @@
   margin: 0 auto;
 }
 
+.screen {
+  background-color: orange;
+  height: 2rem;
+  text-align: center;
+}

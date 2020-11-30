@@ -9,9 +9,7 @@ import BuyTickets from "./pages/BuyTickets";
 import MovieDetails from "./pages/MovieDetails";
 import SelectSeats from "./pages/SelectSeats";
 import NavBar from "./Components/NavBar/NavBar";
-import Email from "./pages/Email";
-import Payment from "./pages/Payment";
-
+import Success from "./pages/Success";
 
 function App() {
   const [state, dispatch] = useReducer(store.reducer, store.initialState);
@@ -34,8 +32,7 @@ function App() {
           <BuyTickets movies={movies} path="biljetter" />
           <MovieDetails movies={movies} path="filmer" />
           <SelectSeats path="/platser" />
-          <Email path="/verify" />
-          <Payment path="/payment" />
+          <Success path="tickets/:ticketId" />
         </Router>
       </AppContext.Provider>
     </>

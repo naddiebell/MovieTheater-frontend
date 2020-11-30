@@ -11,7 +11,7 @@ const resources = {
       "Description": "Beskrivning",
       "About Us": "Om Oss",
       "Home Header": "Stockholms Amerikanska Klassikerfilm",
-      "Clear Selections": "Tydliga",
+      "Clear Selections": "Rensa",
       "Ticket Page H1": "Biljetter till föreställningar i Stockholm",
     },
   },
