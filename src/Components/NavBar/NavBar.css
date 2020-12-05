@@ -32,3 +32,9 @@ li a:hover {
 .logoImage {
   height: 3rem;
 }
+
+.lang {
+  margin: 10px;
+  float: right;
+  margin-top: 20px; 
+}

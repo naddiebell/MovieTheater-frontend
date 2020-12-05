@@ -12,6 +12,7 @@
     "dotenv": "^8.2.0",
     "emailjs-com": "^2.6.3",
     "i18next": "^19.8.4",
+    "i18next-browser-languagedetector": "^6.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.3",

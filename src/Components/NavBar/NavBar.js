@@ -7,6 +7,11 @@ import "./NavBar.css";
 
 function NavBar() {
   const { t, i18n } = useTranslation();
+  const handleLanguage = (language) => {
+    localStorage.setItem("language", language);
+    console.log(localStorage.language);
+    i18n.changeLanguage(language);
+  };
   return (
     <>
       <ul className="navBar">
@@ -25,7 +30,20 @@ function NavBar() {
         <li>
           <Link to="/om-oss">{t("About Us")}</Link>
         </li>
-        <button type="button" onClick={() => i18n.changeLanguage("en")}>Språk</button>
+        <button
+          className="lang myButton"
+          type="button"
+          onClick={() => handleLanguage("en")}
+        >
+          EN
+        </button>
+        <button
+          className="lang myButton"
+          type="button"
+          onClick={() => handleLanguage("sv")}
+        >
+          SV
+        </button>
       </ul>
     </>
   );
