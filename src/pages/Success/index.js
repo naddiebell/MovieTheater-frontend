@@ -34,7 +34,7 @@ function Success(props) {
         price: ticketInfo.price,
       },
     };
-     await axios.post(emailJSApi, emailData);
+    await axios.post(emailJSApi, emailData);
     console.log("I did it!");
   };
 
