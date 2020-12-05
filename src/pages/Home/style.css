@@ -32,3 +32,9 @@
   .mainHeader {
       text-align: center;
   }
+
+  .nowPlaying {
+      position: relative;
+      top: 7rem;
+      left: 25.5%
+  }

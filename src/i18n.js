@@ -13,6 +13,7 @@ const resources = {
       "Home Header": "Stockholms Amerikanska Klassikerfilm",
       "Clear Selections": "Rensa",
       "Ticket Page H1": "Biljetter till föreställningar i Stockholm",
+      "Playing": "Spelar Nu",
     },
   },
   en: {
@@ -24,6 +25,7 @@ const resources = {
       "Home Header": "American Classic Movie Theater",
       "Clear Selections": "Clear",
       "Ticket Page H1": "Tickets for Movies in Stockholm",
+      "Playing": "Now Playing",
     },
   },
 };
@@ -32,7 +34,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "sv",
+    lng: localStorage.getItem("language") || "sv",
 
     keySeparator: false, // we do not use keys in form messages.welcome
 

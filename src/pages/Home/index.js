@@ -9,6 +9,7 @@ export default function HomePage(props) {
 
   return (
     <>
+      <h3 className="nowPlaying">{t("Playing")}:</h3>
       <div className="homeDiv">
         <img
           // eslint-disable-next-line global-require
