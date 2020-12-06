@@ -6,19 +6,17 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   sv: {
     translation: {
-      "Welcome to React": "Välkommen att reagera",
       "Tickets Button": "Biljetter",
       "Description": "Beskrivning",
       "About Us": "Om Oss",
       "Home Header": "Stockholms Amerikanska Klassikerfilm",
       "Clear Selections": "Rensa",
       "Ticket Page H1": "Biljetter till föreställningar i Stockholm",
-      "Playing": "Spelar Nu",
+      "Playing": "Spelas Nu",
     },
   },
   en: {
     translation: {
-      "Welcome to React": "Bienvenue à React et react-i18next",
       "Tickets Button": "Tickets",
       "Description": "Description",
       "About Us": "About Us",
