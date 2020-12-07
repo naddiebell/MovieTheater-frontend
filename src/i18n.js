@@ -13,6 +13,8 @@ const resources = {
       "Clear Selections": "Rensa",
       "Ticket Page H1": "Biljetter till föreställningar i Stockholm",
       "Playing": "Spelas Nu",
+      "Choose Seats": "Välj Dina Platser",
+      "Pay": "Betala",
     },
   },
   en: {
@@ -24,6 +26,8 @@ const resources = {
       "Clear Selections": "Clear",
       "Ticket Page H1": "Tickets for Movies in Stockholm",
       "Playing": "Now Playing",
+      "Choose Seats": "Select Your Seats",
+      "Pay": "Pay",
     },
   },
 };

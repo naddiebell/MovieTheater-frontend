@@ -4,7 +4,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable func-names */
 import React, { useState, useContext, useEffect } from "react";
-import axios from "axios";
 import { useTranslation } from "react-i18next";
 import "./style.css";
 import "../../SharedStyles/Button/button.css";
@@ -16,7 +15,7 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 export default function BuyTickets(props) {
   const { t } = useTranslation();
-  const { state, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
   const [ticketData, setTicketData] = useState({
     date: "",
     filmTitle: "",
@@ -58,9 +57,15 @@ export default function BuyTickets(props) {
     getDay(ticketData.date);
   }, [dispatch, ticketData]);
 
-  const handleButton = (e) => {
-    e.preventDefault();
-    navigate("/platser");
+  const handleButton = (aMovie) => {
+    console.log("aMovie", aMovie)
+    if (date) {
+      setTicketData({ ...ticketData, filmTitle: aMovie.movieTitle });
+      navigate("/platser");
+    } else {
+      // eslint-disable-next-line no-alert
+      alert("Please select a movie and a date");
+    }
   };
 
   const movieTitles = () => {
@@ -106,9 +111,16 @@ export default function BuyTickets(props) {
   };
 
   const renderMovie = (aMovie, aDate) => {
+    if (!aMovie) {
+      return;
+    }
     const timeButton = aMovie.time.map((movieTime) => {
       return (
-        <button onClick={handleButton} type="button">
+        <button
+          onClick={() => handleButton(aMovie)}
+          type="button"
+          className="myButton"
+        >
           {movieTime}
         </button>
       );
@@ -132,18 +144,6 @@ export default function BuyTickets(props) {
         </div>
       </div>
     );
-  };
-
-  const renderMovieTimeBtn = (movieArray) => {
-    return movieArray.map((aMovie) => {
-      return (
-        <div className="movTimeBtn">
-          <button type="button" className="myButton">
-            {aMovie.time}
-          </button>
-        </div>
-      );
-    });
   };
 
   const showSelection = (selectedDate, selectedMovie) => {
@@ -171,24 +171,6 @@ export default function BuyTickets(props) {
     const { name } = e.target;
     setTicketData({ ...ticketData, [name]: value });
   };
-
-  function handleDisplay(e) {
-    e.preventDefault();
-    axios
-      .post(`${backendURL}/api/v1/tickets`, {
-        filmName: filmTitle,
-        dateOfFilm: date,
-        seatAmount: ticketAmount,
-      })
-      .then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }
 
   const handleClearButton = (e) => {
     e.preventDefault();

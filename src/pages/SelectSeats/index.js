@@ -3,6 +3,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import { loadStripe } from "@stripe/stripe-js";
 import Seat from "../../Components/Seat/Seat";
 import "../../SharedStyles/Button/button.css";
@@ -15,8 +16,7 @@ const stripePromise = loadStripe(stripePK);
 export default function SelectSeats() {
   const [seatValue, setSeatValue] = useState(Array(25).fill(null));
   const { state, dispatch } = useContext(AppContext);
-  // eslint-disable-next-line no-unused-vars
-  const [displaySeat, setDisplaySeat] = useState(false);
+  const { t } = useTranslation();
   const [userData, setUserData] = useState({
     date: state.ticket.date,
     filmTitle: state.ticket.filmTitle,
@@ -124,8 +124,21 @@ export default function SelectSeats() {
 
   return (
     <>
-      <h1>Välj dina platser</h1>
+      <h1>{t("Choose Seats")}</h1>
       <div className="seatStyle">
+        <div className="receiptInfo">
+          <p>{getSeats()}</p>
+          <p>Alla biljetter är 80 kr med moms</p>
+          <p>{state.ticket.filmTitle}</p>
+          <p>{state.ticket.date}</p>
+        </div>
+        <div className="rowLabel">
+          <p>Row 1</p>
+          <p>Row 2</p>
+          <p>Row 3</p>
+          <p>Row 4</p>
+          <p>Row 5</p>
+        </div>
         <div className="seatsBackground">
           <div className="screen">Screen</div>
           <div className="board-row row1">
@@ -192,10 +205,6 @@ export default function SelectSeats() {
           </button>
         </form>
       </div>
-      <p>{getSeats()}</p>
-      <p>Alla biljetter är 80 kr</p>
-      <p>{state.ticket.filmTitle}</p>
-      <p>{state.ticket.date}</p>
     </>
   );
 }

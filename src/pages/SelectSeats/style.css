@@ -17,7 +17,32 @@
 }
 
 .screen {
-  background-color: orange;
+  background-color:  #f76d30;
   height: 2rem;
   text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10rem;
+}
+
+.receiptInfo {
+  margin-left: 10rem;
+  margin-top: 4.2rem
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rowLabel {
+  position: absolute;
+  left: 34.5rem;
+  top: 13rem;
+  display: flex;
+  flex-direction: column;
+
 }

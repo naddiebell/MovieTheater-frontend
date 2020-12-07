@@ -37,7 +37,7 @@ function Success(props) {
     };
     await axios.post(emailJSApi, emailData);
   };
-  sendEmail();
+  //sendEmail();
 
   return (
     <>
