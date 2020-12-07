@@ -138,13 +138,7 @@ export default function SelectSeats() {
           <p>{state.ticket.date}</p>
           <p>{displayedPrice()}</p>
         </div>
-        <div className="rowLabel">
-          <p>Row 1</p>
-          <p>Row 2</p>
-          <p>Row 3</p>
-          <p>Row 4</p>
-          <p>Row 5</p>
-        </div>
+
         <div className="seatsBackground">
           <div className="screen">Screen</div>
           <div className="board-row row1">

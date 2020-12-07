@@ -41,11 +41,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.rowLabel {
-  position: absolute;
-  left: 34.5rem;
-  top: 13rem;
+/* .rowAndLabel {
   display: flex;
-  flex-direction: column;
 
-}
+} */

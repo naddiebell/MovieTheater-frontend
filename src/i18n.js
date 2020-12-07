@@ -15,6 +15,8 @@ const resources = {
       "Playing": "Spelas Nu",
       "Choose Seats": "Välj Dina Platser",
       "Pay": "Betala",
+      "Email Success": "Tack för att du tittade på våra favorit amerikanska klassiska filmer med oss! Din betalning lyckades. Ditt kvitto skickades automatiskt till din e-post!",
+      "Unsuccess": "Vi beklagar, men din betalning misslyckades. Var god försök igen!",
     },
   },
   en: {
@@ -28,6 +30,8 @@ const resources = {
       "Playing": "Now Playing",
       "Choose Seats": "Select Your Seats",
       "Pay": "Pay",
+      "Email Success": "Thank you for watching our favorite American classic films with us! Your payment was successful. Your receipt was automatically sent to your email!",
+      "Unsuccess": "",
     },
   },
 };

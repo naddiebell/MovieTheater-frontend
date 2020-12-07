@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import axios from "axios";
 import "./style.css";
+import { useTranslation } from "react-i18next";
 
 const emailjsId = process.env.REACT_APP_EMAILJS_ID;
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
@@ -11,6 +11,7 @@ const templateId = process.env.REACT_APP_EJS_TEMPLATE_ID;
 
 function Success(props) {
   const { ticketId, children } = props;
+  const { t } = useTranslation();
 
   const verifyPayment = async () => {
     const res = await axios.put(
@@ -43,11 +44,7 @@ function Success(props) {
     <>
       {children}
       <div>
-        <p className="sendEmail">
-          Thank you for watching our favorite American class films with us! Your
-          payment was successful. Your receipt was automatically sent to your
-          email!
-        </p>
+        <p className="sendEmail">{t("Email Success")}</p>
       </div>
     </>
   );
