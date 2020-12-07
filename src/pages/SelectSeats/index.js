@@ -32,6 +32,11 @@ export default function SelectSeats() {
 
   const indexes = [];
 
+  const displayedPrice = () => {
+    const pris = indexes.length * 80;
+    return `Pris är ${pris} kr`;
+  }
+
   const popCornEmoji = String.fromCodePoint(0x1f37f);
 
   function renderSeat(i) {
@@ -131,6 +136,7 @@ export default function SelectSeats() {
           <p>Alla biljetter är 80 kr med moms</p>
           <p>{state.ticket.filmTitle}</p>
           <p>{state.ticket.date}</p>
+          <p>{displayedPrice()}</p>
         </div>
         <div className="rowLabel">
           <p>Row 1</p>
