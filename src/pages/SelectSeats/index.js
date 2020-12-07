@@ -181,7 +181,7 @@ export default function SelectSeats() {
             {renderSeat(24)}
           </div>
         </div>
-        <form className="form">
+        <form className="formInfo">
           <label htmlFor="userName">
             <input
               type="text"
@@ -201,7 +201,7 @@ export default function SelectSeats() {
             />
           </label>
           <button type="button" onClick={handlePay} className="myButton">
-            Pay
+            {t("Pay")}
           </button>
         </form>
       </div>
