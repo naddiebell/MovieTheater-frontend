@@ -16,9 +16,8 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      // eslint-disable-next-line no-unused-vars
-      const response = await setMovies(data.movies);
+    const fetchData = () => {
+      setMovies(data.movies);
     };
     fetchData();
   }, []);

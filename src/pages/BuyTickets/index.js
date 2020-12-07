@@ -1,12 +1,11 @@
+/* eslint-disable no-console */
 /* eslint-disable consistent-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable func-names */
-/* eslint-disable no-console */
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import "../../Components/Card/card.css";
 import "./style.css";
 import "../../SharedStyles/Button/button.css";
 import { useNavigate } from "@reach/router";
@@ -68,9 +67,6 @@ export default function BuyTickets(props) {
     if (movies.length === 0) {
       return;
     }
-    // if (state.ticket.filmTitle === "Se alla filmer:") {
-    //   setDisplayMovieByDate(false);
-    // }
     if (ticketData.date) {
       const day = getDay(ticketData.date);
       const getMovieByDate = movies.filter((movie) => {
@@ -142,7 +138,9 @@ export default function BuyTickets(props) {
     return movieArray.map((aMovie) => {
       return (
         <div className="movTimeBtn">
-          <button type="button" className="myButton" >{aMovie.time}</button>
+          <button type="button" className="myButton">
+            {aMovie.time}
+          </button>
         </div>
       );
     });
@@ -254,5 +252,3 @@ export default function BuyTickets(props) {
     </>
   );
 }
-
-// onSubmit={(e) => handleDisplay(e)}

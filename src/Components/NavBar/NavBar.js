@@ -9,9 +9,9 @@ function NavBar() {
   const { t, i18n } = useTranslation();
   const handleLanguage = (language) => {
     localStorage.setItem("language", language);
-    console.log(localStorage.language);
     i18n.changeLanguage(language);
   };
+
   return (
     <>
       <ul className="navBar">

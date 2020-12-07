@@ -45,7 +45,21 @@ function MovieDetails(props) {
 
           <h1 className="movieTitle">{movieInfo.movieTitle}</h1>
           <div className="movieDesc">
-            <ReactPlayer className="moviePoster" url={movieInfo.video} />
+            <ReactPlayer
+              className="moviePoster"
+              url={movieInfo.video}
+              config={{
+                youtube: {
+                  playerVars: {
+                    showinfo: 0,
+                    modestbranding: 1,
+                    rel: 0,
+                    playIcon: true,
+                    controls: true,
+                  },
+                },
+              }}
+            />
 
             <div className="descAndInfo">
               <h3 className="descriptionTitle">{t("Description")}</h3>

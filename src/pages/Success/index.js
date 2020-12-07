@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import axios from "axios";
+import "./style.css";
 
 const emailjsId = process.env.REACT_APP_EMAILJS_ID;
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
@@ -18,9 +19,9 @@ function Success(props) {
     return res.data;
   };
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
+  const sendEmail = async () => {
     const ticketInfo = await verifyPayment();
+    const adjustedPrice = ticketInfo.price / 100;
     const emailData = {
       service_id: serviceId,
       template_id: templateId,
@@ -31,24 +32,23 @@ function Success(props) {
         film: ticketInfo.filmName,
         ticket_amount: ticketInfo.seatAmount,
         date: ticketInfo.date,
-        price: ticketInfo.price,
+        price: adjustedPrice,
       },
     };
     await axios.post(emailJSApi, emailData);
-    console.log("I did it!");
   };
+  sendEmail();
 
   return (
     <>
       {children}
-      <p>
-        Thank you for watching our favorite American class films with us! Your
-        payment was successful. You can click the button to send yourself your
-        receipt
-      </p>
-      <button className="myButton" type="button" onClick={sendEmail}>
-        Kvitto
-      </button>
+      <div>
+        <p className="sendEmail">
+          Thank you for watching our favorite American class films with us! Your
+          payment was successful. Your receipt was automatically sent to your
+          email!
+        </p>
+      </div>
     </>
   );
 }
