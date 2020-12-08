@@ -58,7 +58,6 @@ export default function BuyTickets(props) {
   }, [dispatch, ticketData]);
 
   const handleButton = (aMovie) => {
-    console.log("aMovie", aMovie)
     if (date) {
       setTicketData({ ...ticketData, filmTitle: aMovie.movieTitle });
       navigate("/platser");

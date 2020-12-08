@@ -110,14 +110,12 @@ export default function SelectSeats() {
   const handlePay = async (e) => {
     e.preventDefault();
     const ticket = await createTicket();
-    console.log("ticket", ticket);
 
     const stripe = await stripePromise;
     const res = await axios.post(`${baseUrl}/create-checkout-session`, {
       ticket,
     });
 
-    console.log(res);
 
     const session = res.data;
 

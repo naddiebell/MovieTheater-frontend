@@ -11,5 +11,3 @@ function Seat({ value, onClick }) {
 
 export default Seat;
 
-// console.log("nextSeat[i]", nextSeat[i])
-// console.log('nextSeat', nextSeat)
