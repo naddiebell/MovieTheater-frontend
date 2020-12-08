@@ -31,7 +31,7 @@ const resources = {
       "Choose Seats": "Select Your Seats",
       "Pay": "Pay",
       "Email Success": "Thank you for watching our favorite American classic films with us! Your payment was successful. Your receipt was automatically sent to your email!",
-      "Unsuccess": "",
+      "Unsuccess": "Your payment did not go through.  Please try again!",
     },
   },
 };
