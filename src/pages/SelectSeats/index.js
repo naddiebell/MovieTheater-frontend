@@ -102,7 +102,7 @@ export default function SelectSeats() {
       price: state.ticket.price,
       userName: userData.userName,
       userEmail: userData.userEmail,
-      seats: userData.seats,
+      seats: userData.seats[0],
     });
     return response.data;
   };
