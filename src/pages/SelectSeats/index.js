@@ -24,6 +24,7 @@ export default function SelectSeats() {
     userName: "",
     userEmail: "",
     price: "",
+    seats: [],
   });
 
   useEffect(() => {
@@ -73,6 +74,7 @@ export default function SelectSeats() {
     const seating = indexes.map((seats) => {
       return ` ${seats}`;
     });
+    userData.seats.push(seating);
     return `Dina valda platser är: ${seating}`;
   }
 
@@ -100,6 +102,7 @@ export default function SelectSeats() {
       price: state.ticket.price,
       userName: userData.userName,
       userEmail: userData.userEmail,
+      seats: userData.seats[0],
     });
     return response.data;
   };
@@ -107,14 +110,12 @@ export default function SelectSeats() {
   const handlePay = async (e) => {
     e.preventDefault();
     const ticket = await createTicket();
-    console.log("ticket", ticket);
 
     const stripe = await stripePromise;
     const res = await axios.post(`${baseUrl}/create-checkout-session`, {
       ticket,
     });
 
-    console.log(res);
 
     const session = res.data;
 

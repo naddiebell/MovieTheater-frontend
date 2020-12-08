@@ -7,6 +7,7 @@ const state = {
     userName: "",
     userEmail: "",
     price: "",
+    seats: [],
   },
 };
 

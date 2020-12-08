@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./style.css";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,7 @@ const templateId = process.env.REACT_APP_EJS_TEMPLATE_ID;
 
 function Success(props) {
   const { ticketId, children } = props;
+  const [disabledBtn, setDisableBtn] = useState(false);
   const { t } = useTranslation();
 
   const verifyPayment = async () => {
@@ -34,17 +35,31 @@ function Success(props) {
         ticket_amount: ticketInfo.seatAmount,
         date: ticketInfo.date,
         price: adjustedPrice,
+        seats: ticketInfo.seats,
       },
     };
     await axios.post(emailJSApi, emailData);
   };
-  sendEmail();
+
+  const handleButton = (e) => {
+    e.preventDefault();
+    sendEmail();
+    setDisableBtn(true);
+  };
 
   return (
     <>
       {children}
       <div>
         <p className="sendEmail">{t("Email Success")}</p>
+        <button
+          type="button"
+          className="myButton"
+          onClick={handleButton}
+          disabled={disabledBtn}
+        >
+          {t("Send Email")}
+        </button>
       </div>
     </>
   );
