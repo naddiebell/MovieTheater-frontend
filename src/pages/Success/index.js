@@ -35,24 +35,31 @@ function Success(props) {
         ticket_amount: ticketInfo.seatAmount,
         date: ticketInfo.date,
         price: adjustedPrice,
-        seats: ticketInfo.seats;
+        seats: ticketInfo.seats,
       },
     };
     await axios.post(emailJSApi, emailData);
   };
-  
+
   const handleButton = (e) => {
     e.preventDefault();
     sendEmail();
     setDisableBtn(true);
-  }
+  };
 
   return (
     <>
       {children}
       <div>
         <p className="sendEmail">{t("Email Success")}</p>
-        <button type="button" disable={disabledBtn}>{t("Send Email")}</button>
+        <button
+          type="button"
+          className="myButton"
+          onClick={handleButton}
+          disable={disabledBtn}
+        >
+          {t("Send Email")}
+        </button>
       </div>
     </>
   );
