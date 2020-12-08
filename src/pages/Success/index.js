@@ -54,7 +54,7 @@ function Success(props) {
         <p className="sendEmail">{t("Email Success")}</p>
         <button
           type="button"
-          className="myButton"
+          className="myButton receptbtn"
           onClick={handleButton}
           disabled={disabledBtn}
         >
