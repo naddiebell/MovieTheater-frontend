@@ -17,6 +17,7 @@ const resources = {
       "Pay": "Betala",
       "Email Success": "Tack för att du tittade på våra favorit amerikanska klassiska filmer med oss! Din betalning lyckades. Ditt kvitto skickades automatiskt till din e-post!",
       "Unsuccess": "Vi beklagar, men din betalning misslyckades. Var god försök igen!",
+      "Send Email": "kvitto",
     },
   },
   en: {
@@ -32,6 +33,7 @@ const resources = {
       "Pay": "Pay",
       "Email Success": "Thank you for watching our favorite American classic films with us! Your payment was successful. Your receipt was automatically sent to your email!",
       "Unsuccess": "Your payment did not go through.  Please try again!",
+      "Send Email": "Send Email",
     },
   },
 };

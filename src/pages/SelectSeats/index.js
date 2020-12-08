@@ -24,6 +24,7 @@ export default function SelectSeats() {
     userName: "",
     userEmail: "",
     price: "",
+    seats: [],
   });
 
   useEffect(() => {
@@ -73,6 +74,7 @@ export default function SelectSeats() {
     const seating = indexes.map((seats) => {
       return ` ${seats}`;
     });
+    userData.seats.push(seating);
     return `Dina valda platser är: ${seating}`;
   }
 
@@ -100,6 +102,7 @@ export default function SelectSeats() {
       price: state.ticket.price,
       userName: userData.userName,
       userEmail: userData.userEmail,
+      seats: userData.seats,
     });
     return response.data;
   };
