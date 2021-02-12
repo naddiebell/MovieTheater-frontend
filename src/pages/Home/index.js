@@ -23,6 +23,14 @@ export default function HomePage(props) {
       <div className="carous">
         <MovieCarousel movies={movies} />
       </div>
+
+      <div className="carous">
+        <MovieCarousel movies={movies} />
+      </div>
+
+      <div className="carous">
+        <MovieCarousel movies={movies} />
+      </div>
     </>
   );
 }
