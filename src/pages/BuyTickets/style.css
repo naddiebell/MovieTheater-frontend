@@ -17,6 +17,7 @@
 .pageH1 {
     margin-top: 2rem;
     text-align: center;
+    font-size: 2.2rem;
 }
 
 .backgroundShowSelection {
@@ -40,4 +41,17 @@
 .movTimeBtn {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+hr {
+    color: #cc0028;
+}
+
+.movieTitl {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.movieTimes {
+    margin-top: 1.5rem;
 }

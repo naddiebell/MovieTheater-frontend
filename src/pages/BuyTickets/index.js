@@ -136,11 +136,12 @@ export default function BuyTickets(props) {
             />
           </div>
           <div className="movieDetails">
-            {aMovie.movieTitle}
+            <h3 className="movieTitl">{aMovie.movieTitle}</h3>
             <p>Datum: {aDate} </p>
-            <p>{timeButton}</p>
+            <p className="movieTimes">{timeButton}</p>
           </div>
         </div>
+        <hr />
       </div>
     );
   };
