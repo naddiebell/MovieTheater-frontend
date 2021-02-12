@@ -25,26 +25,24 @@ function NavBar() {
           </Link>
         </li>
         <li className="navPage">
-          <Link to="/biljetter"> {t("Tickets Button")}</Link>
+          <Link className="navBarText" to="/biljetter"> {t("Tickets Button")}</Link>
         </li>
         <li className="navPage">
-          <Link to="/om-oss">{t("About Us")}</Link>
+          <Link className="navBarText" to="/om-oss">{t("About Us")}</Link>
         </li>
-        <div>
-        <button
-          className="lang myButton"
-          type="button"
-          onClick={() => handleLanguage("en")}
-        >
-          EN
-        </button>
-        <button
-          className="lang myButton"
-          type="button"
-          onClick={() => handleLanguage("sv")}
-        >
-          SV
-        </button>
+        <div className="languageParent">
+          <li
+            className="navBarText"
+            onClick={() => handleLanguage("en")}
+          >
+            EN
+        </li>
+          <li
+            className="navBarText"
+            onClick={() => handleLanguage("sv")}
+          >
+            SV
+        </li>
         </div>
       </ul>
     </>

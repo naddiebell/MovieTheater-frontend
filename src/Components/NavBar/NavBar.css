@@ -22,7 +22,17 @@
   height: 3.56em;
 }
 
-li a:hover {
+.navBarText {
+  color: white;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.navBarText:hover {
   box-shadow: inset 0 -.25rem 0 0 hsla(0,0%,100%,.5);
 }
 
@@ -31,24 +41,8 @@ li a:hover {
   width: auto;
 }
 
-.lang {
-height: 30px;
-margin-left: auto;
-text-align: center;
-
-}
-
 .navPage {
   display: flex;
-}
-
-.navPage a {
-  color: white;
-  text-align: center;
-  padding: 1rem 1.5rem;
-  text-decoration: none;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 400;
 }
 
 .logoListItem {
@@ -61,4 +55,8 @@ text-align: center;
 
 .homeLink {
   padding: auto 5px;
+}
+
+.languageParent {
+  display: flex;
 }
