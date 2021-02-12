@@ -15,10 +15,11 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 export default function BuyTickets(props) {
   const { t } = useTranslation();
-  const { dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
+  console.log(state.ticket.filmTitle)
   const [ticketData, setTicketData] = useState({
     date: "",
-    filmTitle: "",
+    filmTitle: state.ticket.filmTitle,
     ticketAmount: "",
   });
   const { movies } = props;
