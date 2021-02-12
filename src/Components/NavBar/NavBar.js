@@ -15,21 +15,22 @@ function NavBar() {
   return (
     <>
       <ul className="navBar">
-        <li>
-          <Link to="/">
+        <li className="logoListItem" >
+          <Link to="/" className="homeLink">
             <img
               className="logoImage"
-              alt="alttest"
-              src={require("../../background_img/logo_transparent_crop.png")}
+              alt="home page"
+              src={require("../../photos/camera_logo.png")}
             />
           </Link>
         </li>
-        <li>
+        <li className="navPage">
           <Link to="/biljetter"> {t("Tickets Button")}</Link>
         </li>
-        <li>
+        <li className="navPage">
           <Link to="/om-oss">{t("About Us")}</Link>
         </li>
+        <div>
         <button
           className="lang myButton"
           type="button"
@@ -44,6 +45,7 @@ function NavBar() {
         >
           SV
         </button>
+        </div>
       </ul>
     </>
   );
