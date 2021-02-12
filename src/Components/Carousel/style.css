@@ -6,7 +6,8 @@
 
 .aLegend {
     color: white;
-    font-size: 2rem;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .movieImage {
