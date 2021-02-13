@@ -133,11 +133,12 @@ export default function SelectSeats() {
       <h1>{t("Choose Seats")}</h1>
       <div className="seatStyle">
         <div className="receiptInfo">
-          <p>{getSeats()}</p>
-          <p>Alla biljetter är 80 kr med moms</p>
-          <p>{state.ticket.filmTitle}</p>
-          <p>{state.ticket.date}</p>
-          <p>{displayedPrice()}</p>
+          <h3>Receipt Info</h3>
+          <p className="receiptText">{getSeats()}</p>
+          <p className="receiptText">Alla biljetter är 80 kr med moms</p>
+          <p className="receiptText selectedMovie">{state.ticket.filmTitle}</p>
+          <p className="receiptText">{state.ticket.date}</p>
+          <p className="receiptText">{displayedPrice()}</p>
         </div>
 
         <div className="seatsBackground">

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-console */
 /* eslint-disable consistent-return */
 /* eslint-disable no-unused-vars */
@@ -126,6 +127,14 @@ export default function BuyTickets(props) {
       );
     });
 
+    const dateSelected = () => {
+      console.log("amovie", aMovie.daysPlaying);
+      if (aDate === "") {
+        return aMovie.daysPlaying.join(" ")
+      }
+      return aDate;
+    };
+
     return (
       <div className="backgroundShowSelection">
         <div className="flexMovItems">
@@ -138,7 +147,7 @@ export default function BuyTickets(props) {
           </div>
           <div className="movieDetails">
             <h3 className="movieTitl">{aMovie.movieTitle}</h3>
-            <p>Datum: {aDate} </p>
+            <p>Datum: {dateSelected()} </p>
             <p className="movieTimes">{timeButton}</p>
           </div>
         </div>
@@ -148,12 +157,13 @@ export default function BuyTickets(props) {
   };
 
   const showSelection = (selectedDate, selectedMovie) => {
+    console.log(selectedMovie)
+    let moviesArr = movies.slice();
     if (!selectedDate && !selectedMovie) {
-      return;
+      return moviesArr.map((aMovie) => renderMovie(aMovie, selectedDate));
     }
     const day = getDay(selectedDate);
 
-    let moviesArr = movies.slice();
     if (selectedDate !== "") {
       moviesArr = moviesArr.filter((movieInfo) => {
         return movieInfo.daysPlaying.includes(day);

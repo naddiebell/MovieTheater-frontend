@@ -33,10 +33,23 @@
 
 .receiptInfo {
   margin-left: 10rem;
-  margin-top: 4.2rem
+  margin-top: 4.2rem;
+  max-width: 15%;
+  background: rgb(224, 70, 101, .7);
+  padding: 1rem;
+  
 }
 
 h1 {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.receiptText {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.selectedMovie {
+  margin-top: 2rem;
 }
