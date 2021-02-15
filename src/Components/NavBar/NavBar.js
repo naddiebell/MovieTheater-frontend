@@ -15,7 +15,7 @@ function NavBar() {
   return (
     <>
       <ul className="navBar">
-        <li className="logoListItem" >
+        <li className="logoListItem">
           <Link to="/" className="homeLink">
             <img
               className="logoImage"
@@ -25,24 +25,23 @@ function NavBar() {
           </Link>
         </li>
         <li className="navPage">
-          <Link className="navBarText" to="/biljetter"> {t("Tickets Button")}</Link>
+          <Link className="navBarText" to="/biljetter">
+            {" "}
+            {t("Tickets Button")}
+          </Link>
         </li>
         <li className="navPage">
-          <Link className="navBarText" to="/om-oss">{t("About Us")}</Link>
+          <Link className="navBarText" to="/om-oss">
+            {t("About Us")}
+          </Link>
         </li>
         <div className="languageParent">
-          <li
-            className="navBarText"
-            onClick={() => handleLanguage("en")}
-          >
+          <li className="navBarText" onClick={() => handleLanguage("en")}>
             EN
-        </li>
-          <li
-            className="navBarText"
-            onClick={() => handleLanguage("sv")}
-          >
+          </li>
+          <li className="navBarText" onClick={() => handleLanguage("sv")}>
             SV
-        </li>
+          </li>
         </div>
       </ul>
     </>

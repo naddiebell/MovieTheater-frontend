@@ -16,8 +16,7 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 export default function BuyTickets(props) {
   const { t } = useTranslation();
-  const { state, dispatch } = useContext(AppContext);
-  console.log(state.ticket.filmTitle)
+  const { state, dispatch } = useContext(AppContext); 
   const [ticketData, setTicketData] = useState({
     date: "",
     filmTitle: state.ticket.filmTitle,
@@ -130,7 +129,7 @@ export default function BuyTickets(props) {
     const dateSelected = () => {
       console.log("amovie", aMovie.daysPlaying);
       if (aDate === "") {
-        return aMovie.daysPlaying.join(" ")
+        return aMovie.daysPlaying.join(" ");
       }
       return aDate;
     };
@@ -157,7 +156,6 @@ export default function BuyTickets(props) {
   };
 
   const showSelection = (selectedDate, selectedMovie) => {
-    console.log(selectedMovie)
     let moviesArr = movies.slice();
     if (!selectedDate && !selectedMovie) {
       return moviesArr.map((aMovie) => renderMovie(aMovie, selectedDate));

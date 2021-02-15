@@ -3,7 +3,7 @@
         {
             "id": 1,
             "movieTitle": "Apocalypse Now",
-            "img": "https://static.rogerebert.com/uploads/movie/movie_poster/apocalypse-now-1979/large_xytHTHqtQlXtzyJTtlqnVjvDdqd.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/v1613322828/MoviePosters/Apocalypse_Now_zs14cv.jpg",
             "description": "En amerikansk arméofficer som tjänstgör i Vietnam har till uppgift att mörda en övergiven specialstyrkoröverste som ser sig själv som en gud.",
             "daysPlaying": ["lördag", "onsdag", "fredag"],
             "childrenFriendly": "no",
@@ -15,7 +15,7 @@
         {
             "id": 2,
             "movieTitle": "The Lion King",
-            "img": "https://badmoviemarathon.files.wordpress.com/2015/10/the-lion-king-poster.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/the-lion-king-poster_zql5si.jpg",
             "description": "Denna Disney-animerade funktion följer äventyren hos det unga lejonpriset Simba. Simbas onda farbror, Scar, planerar att utnyttja Mufasas tron ​​genom att locka far och son till en storm av vildgubbar. Simba flyr och återvänder som vuxen för att ta tillbaka sitt hemland från Scar med hjälp av sina vänner Timon och Pumbaa.",
             "daysPlaying": ["tisdag", "torsdag", "fredag"],
             "childrenFriendly": "yes",
@@ -27,7 +27,7 @@
         {
             "id": 3,
             "movieTitle": "Some Like It Hot",
-            "img": "https://www.filmsite.org/posters/somelikeithot.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/somelikeithot_aqwxzl.jpg",
             "description": "Efter att två manliga musiker bevittnat en mobbshit flyr de från staten i ett helt kvinnligt band förklädd till kvinnor, men ytterligare komplikationer inträffade.",
             "daysPlaying": ["måndag", "onsdag"],
             "childrenFriendly": "no",
@@ -39,7 +39,7 @@
         {
             "id": 4,
             "movieTitle": "The Wizard of Oz",
-            "img": "https://movieposters2.com/images/1394042-b.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/wizard_of_oz_nx2j5n.jpg",
             "description": "Dorothy Gale sopas bort från en gård i Kansas till ett magiskt land Oz i en tornado och ger sig ut på en jakt med sina nya vänner för att se trollkarlen som kan hjälpa henne att återvända hem till Kansas och hjälpa sina vänner också.",
             "daysPlaying": ["lördag", "onsdag", "fredag"],
             "childrenFriendly": "yes",
@@ -51,7 +51,7 @@
         {
             "id": 5,
             "movieTitle": "The Godfather",
-            "img": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/godfather_ve543x.jpg",
             "description": "Den åldrande patriarken för en organiserad brottsdynasti överför kontrollen över sitt hemliga imperium till sin motvilliga son.",
             "daysPlaying": ["söndag", "torsdag"],
             "childrenFriendly": "no",
@@ -63,7 +63,7 @@
         {
             "id": 6,
             "movieTitle": "Forrest Gump",
-            "img": "https://velociraptor256.files.wordpress.com/2017/08/forrest-gump-poster-1994-tom-hanks.png",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/forrest-gump-poster-1994-tom-hanks_pnykjf.png",
             "description": "Presidentskapet för Kennedy och Johnson, händelserna i Vietnam, Watergate och andra historiska händelser utvecklas genom perspektivet hos en man från Alabama med en IQ på 75, vars enda önskan är att återförenas med sin barndoms älskling.",
             "daysPlaying": ["fredag", "lördag"],
             "childrenFriendly": "no",
@@ -75,7 +75,7 @@
         {
             "id": 7,
             "movieTitle": "The Princess Bride",
-            "img": "https://images-na.ssl-images-amazon.com/images/I/815sfDB8mEL._SL1500_.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/princess-bride_bzqd9o.jpg",
             "description": "Medan han är hemma i sängen läser en ung pojkes farfar honom berättelsen om en farmboy-förvandlad pirat som möter många hinder, fiender och allierade i hans strävan att återförenas med sin sanna kärlek.",
             "daysPlaying": ["söndag", "tisdag"],
             "childrenFriendly": "yes",
@@ -87,7 +87,7 @@
         {
             "id": 8,
             "movieTitle": "Willy Wonka and The Chocolate Factory",
-            "img": "https://i.pinimg.com/originals/1f/c1/09/1fc109397dda3d5099ae035d47f34a3c.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322829/MoviePosters/willy-wonka_lnnb8l.jpg",
             "description": "När Willy Wonka bestämmer sig för att släppa in fem barn i sin chokladfabrik, bestämmer han sig för att släppa fem gyllene biljetter i fem separata chokladkakor, vilket ger total kaos. Biljetterna börjar hittas, med den femte som går till en mycket speciell pojke, som heter Charlie Bucket. Med sin farfar går Charlie med resten av barnen för att uppleva den mest fantastiska fabriken någonsin. Men inte allt går enligt plan inom fabriken.",
             "daysPlaying": ["måndag", "onsdag"],
             "childrenFriendly": "yes",
@@ -99,7 +99,7 @@
         {
             "id": 9,
             "movieTitle": "The Breakfast Club",
-            "img": "https://cdn.shopify.com/s/files/1/1416/8662/products/breakfast_club_1985_french_petite_original_film_art_1200x.jpg?v=1589477162",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/breakfast_club_1985_french_petite_original_film_art_1200x_ssn8gr.webp",
             "description": "Fem gymnasieelever träffas i fängelse på lördag och upptäcker hur de har mycket mer gemensamt än de trodde.",
             "daysPlaying": ["fredag", "tisdag", "söndag"],
             "childrenFriendly": "yes",
@@ -111,7 +111,7 @@
         {
             "id": 10,
             "movieTitle": "Pulp Fiction",
-            "img": "https://i.pinimg.com/originals/36/b1/0a/36b10aa4b63950458999594ca442178e.jpg",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/pulp-fiction_z7mxq3.jpg",
             "description": "Livet för två pöbelhitmän, en boxare, en gangster och hans fru och ett par middagarbanditer sammanflätas i fyra berättelser om våld och inlösen.",
             "daysPlaying": ["tisdag", "torsdag", "fredag"],
             "childrenFriendly": "no",
