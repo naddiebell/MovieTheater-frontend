@@ -9,7 +9,7 @@ export default function HomePage(props) {
 
   return (
     <>
-      <h3 className="nowPlaying">{t("Playing")}:</h3>
+      {/* <h3 className="nowPlaying">{t("Playing")}:</h3> */}
       <div className="homeDiv">
         <img
           // eslint-disable-next-line global-require
@@ -21,14 +21,17 @@ export default function HomePage(props) {
       <h1 className="mainHeader">{t("Home Header")}</h1>
 
       <div className="carous">
+        <h3 className="nowPlaying">{t("Playing")}:</h3>
         <MovieCarousel movies={movies} />
       </div>
 
       <div className="carous">
+        <h3>American Classics</h3>
         <MovieCarousel movies={movies} />
       </div>
 
       <div className="carous">
+        <h3>Family Friendly</h3>
         <MovieCarousel movies={movies} />
       </div>
     </>

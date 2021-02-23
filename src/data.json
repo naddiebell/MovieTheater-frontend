@@ -10,7 +10,21 @@
             "year": "1979",
             "time": ["15:00", "17:00", "19:00"],
             "backgroundImg": "https://www.slashfilm.com/wp/wp-content/images/apocalypse-now-1.jpg",
-            "video": "https://youtu.be/9l-ViOOFH-s"
+            "video": "https://youtu.be/9l-ViOOFH-s",
+            "category": "classic"
+        },
+        {
+            "id": 10,
+            "movieTitle": "Pulp Fiction",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/pulp-fiction_z7mxq3.jpg     ",
+            "description": "Livet för två pöbelhitmän, en boxare, en gangster och hans fru och ett par middagarbanditer sammanflätas i fyra berättelser om våld och inlösen.",
+            "daysPlaying": ["tisdag", "torsdag", "fredag"],
+            "childrenFriendly": "no",
+            "year": "1994",
+            "time": ["21:00", "23:00"],
+            "backgroundImg": "https://i2.cdn.turner.com/cnn/dam/assets/140922202153-01-pulp-fiction-horizontal-gallery.jpg",
+            "video": "https://youtu.be/s7EdQ4FqbhY",
+            "category": "classic"
         },
         {
             "id": 2,
@@ -22,19 +36,8 @@
             "year": "1994",
             "time": ["16:00", "18:00", "20:00"],
             "backgroundImg":"https://images.flickreel.com/wp-content/uploads/2016/09/LionKing-1280x720.jpg",
-            "video": "https://www.youtube.com/embed/Zn_qirpdBag"
-        },
-        {
-            "id": 3,
-            "movieTitle": "Some Like It Hot",
-            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/somelikeithot_aqwxzl.jpg",
-            "description": "Efter att två manliga musiker bevittnat en mobbshit flyr de från staten i ett helt kvinnligt band förklädd till kvinnor, men ytterligare komplikationer inträffade.",
-            "daysPlaying": ["måndag", "onsdag"],
-            "childrenFriendly": "no",
-            "year": "1959",
-            "time": ["17:30", "19:30"],
-            "backgroundImg": "https://www.capa.com/assets/img/SMS-Some-Like-it-Hot-18-da2292de77.jpg",
-            "video": "https://youtu.be/rI_lUHOCcbc"
+            "video": "https://www.youtube.com/embed/Zn_qirpdBag",
+            "category": "classic"
         },
         {
             "id": 4,
@@ -46,7 +49,8 @@
             "year": "1939",
             "time": ["16:30", "18:30"],
             "backgroundImg": "https://media.newyorker.com/photos/5a5f81d31255d045857aa700/16:9/w_1280,c_limit/920511_ra475.jpg",
-            "video": "https://youtu.be/VNugTWHnSfw"
+            "video": "https://youtu.be/VNugTWHnSfw",
+            "category": "classic"
         },
         {
             "id": 5,
@@ -58,7 +62,8 @@
             "year": "1972",
             "time": ["20:00", "22:00"],
             "backgroundImg": "https://i.insider.com/58b05f8c54905720098b68be?width=1200&format=jpeg",
-            "video": "https://youtu.be/sY1S34973zA"
+            "video": "https://youtu.be/sY1S34973zA",
+            "category": "classic"
         },
         {
             "id": 6,
@@ -70,7 +75,8 @@
             "year": "1994",
             "time": ["16:30", "18:30"],
             "backgroundImg": "https://i.insider.com/5f6c8482c4049200115cb52b?width=1200&format=jpeg",
-            "video": "https://youtu.be/bLvqoHBptjg"
+            "video": "https://youtu.be/bLvqoHBptjg",
+            "category": ""
         },
         {
             "id": 7,
@@ -82,7 +88,8 @@
             "year": "1987",
             "time": ["16:00", "18:00", "20:00"],
             "backgroundImg": "https://pyxis.nymag.com/v1/imgs/b55/24a/d47f777bdf4f54dd6c906e014b5d859aad-16-the-princess-bride.2x.rsocial.w600.jpg",
-            "video": "https://youtu.be/WNNUcHRiPS8"
+            "video": "https://youtu.be/WNNUcHRiPS8",
+            "category": "classic"
         },
         {
             "id": 8,
@@ -94,7 +101,8 @@
             "year": "1971",
             "time": ["15:00", "17:00", "19:00"],
             "backgroundImg": "https://i.insider.com/57c58e2cb6fa0217008b489f?width=1100&format=jpeg&auto=webp",
-            "video": "https://youtu.be/2cBja3AbahY"
+            "video": "https://youtu.be/2cBja3AbahY",
+            "category": "classic"
         },
         {
             "id": 9,
@@ -106,19 +114,231 @@
             "year": "1985",
             "time": ["17:30", "19:30"],
             "backgroundImg": "https://virtualfeastgallery.files.wordpress.com/2017/05/breakfastc11.png",
-            "video": "https://youtu.be/BSXBvor47Zs"
+            "video": "https://youtu.be/BSXBvor47Zs",
+            "category": "classic"
         },
         {
-            "id": 10,
-            "movieTitle": "Pulp Fiction",
-            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/pulp-fiction_z7mxq3.jpg",
-            "description": "Livet för två pöbelhitmän, en boxare, en gangster och hans fru och ett par middagarbanditer sammanflätas i fyra berättelser om våld och inlösen.",
-            "daysPlaying": ["tisdag", "torsdag", "fredag"],
+            "id": 3,
+            "movieTitle": "Some Like It Hot",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613322828/MoviePosters/somelikeithot_aqwxzl.jpg",
+            "description": "Efter att två manliga musiker bevittnat en mobbshit flyr de från staten i ett helt kvinnligt band förklädd till kvinnor, men ytterligare komplikationer inträffade.",
+            "daysPlaying": ["måndag", "onsdag"],
             "childrenFriendly": "no",
-            "year": "1994",
-            "time": ["21:00", "23:00"],
-            "backgroundImg": "https://i2.cdn.turner.com/cnn/dam/assets/140922202153-01-pulp-fiction-horizontal-gallery.jpg",
-            "video": "https://youtu.be/s7EdQ4FqbhY"
+            "year": "1959",
+            "time": ["17:30", "19:30"],
+            "backgroundImg": "https://www.capa.com/assets/img/SMS-Some-Like-it-Hot-18-da2292de77.jpg",
+            "video": "https://youtu.be/rI_lUHOCcbc",
+            "category": "classic"
+        },
+        {
+            "id": 11,
+            "movieTitle": "Roald Dahls Häxorna",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923258/MoviePosters/Haxorna_bhynyl.webp",
+            "description": "En ung pojke och hans mormor har en run-in med en coven av häxor och deras ledare.",
+            "descriptionEng": "A young boy and his grandmother have a run-in with a coven of witches and their leader.",
+            "daysPlaying": ["måndag", "onsdag"],
+            "childrenFriendly": "yes",
+            "year": "2020",
+            "time": ["16:00", "18:00", "20:00"],
+            "backgroundImg": "https://hbomax-images.warnermediacdn.com/images/GX5A8JQnSPQ2QFgEAAAAC/tile.jpeg?size=640x360&format=jpeg&partner=hbomaxcom&productCode=hbomax&host=artist.api.cdn.hbo.com",
+            "video": "https://www.youtube.com/watch?v=InWdT74rUi4",
+            "category": "now"
+        },
+        {
+            "id": 12,
+            "movieTitle": "Djur Agenterna",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923278/MoviePosters/Djur-agenterna_lsb5wz.jpg",
+            "description": "Vladimir och Hector, två hemliga agenter som motsätter sig på alla sätt, försöker återställa ett topphemligt material som stulits av okända inkräktare.",
+            "descriptionEng": "Vladimir and Hector, two secret agents opposed in every way, are trying to recover a top secret material stolen by unknown intruders. ",
+            "daysPlaying": ["lördag", "onsdag", "fredag"],
+            "childrenFriendly": "yes",
+            "year": "2020",
+            "time": ["17:30", "19:30"],
+            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/04c99558199349b599edcaf77ccf6274.jpg?width=1920&version=A29B39438E4DD03771F9822B856E3A74",
+            "video": "https://www.youtube.com/watch?v=5JM8YwYkG7w",
+            "category": "children"
+        },
+        {
+            "id": 13,
+            "movieTitle": "Apstjärnan",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923267/MoviePosters/apstjarnan_ktstjz.webp",
+            "description": "Jonna har bott på barnhemmet Renfanan i hela sitt liv. Hon har alltid drömt om en mamma. En dag svänger en Gorilla in med sin bil och adopterar henne. Det tar lite tid för Jonna att vänja sig, men precis när allt blivit bra, hotar kommunens starke man deras existens.",
+            "descriptionEng": "Jonna has lived at the Renfanan orphanage all her life. She has always dreamed of a mother. One day a Gorilla turns in with her car and adopts her. It takes some time for Jonna to get used to it, but just when everything has turned out well, the municipality's strong man threatens their existence.",
+            "daysPlaying": ["måndag", "onsdag"],
+            "childrenFriendly": "yes",
+            "year": "2020",
+            "time": ["20:00", "22:00"],
+            "backgroundImg": "https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/378261/ee6831d42a85995a5f27a6b034f58b82-apstj_C3_A4rnan1.jpg",
+            "video": "https://www.youtube.com/watch?v=AIdpa7V68Eo",
+            "category": "children"
+        },
+        {
+            "id": 14,
+            "movieTitle": "Baby Bossen 2",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923263/MoviePosters/baby-bossen-2_o7g24d.webp",
+            "description": "Bröderna Templeton har blivit vuxna och drivit ifrån varandra, men en ny chefsbebis med en banbrytande strategi håller på att föra dem ihop igen - och inspirera ett nytt familjeföretag.",
+            "descriptionEng": "The Templeton brothers have become adults and drifted away from each other, but a new boss baby with a cutting-edge approach is about to bring them together again - and inspire a new family business. ",
+            "daysPlaying": ["söndag", "tisdag"],
+            "childrenFriendly": "yes",
+            "year": "2020",
+            "time": ["17:30", "19:30"],
+            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/6b023f1314704d42bd2685e4db4e6276.jpg?width=1920&version=FF7A929D1F62DED21BE2D686F253EEFF",
+            "video": "https://www.youtube.com/watch?v=JEbrVpH8_4c",
+            "category": "children now"
+        },
+        {
+            "id": 15,
+            "movieTitle": "Flummlarna",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923261/MoviePosters/Flummlarna_icm418.webp",
+            "description": "När två Flummels (en bedårande art av fluffiga djur med hål i mitten) transporteras magiskt till idag, lär de sig att deras art nu är utrotad och glömd. De måste nu resa tillbaka i tiden för att försöka rädda deras ras från att försvinna för alltid.",
+            "descriptionEng": "When two Flummels (an adorable species of fluffy animals with holes in their center) are magically transported to the present day, they learn that their species are now extinct and forgotten. They must now travel back in time to try to save their race from disappearing forever.",
+            "daysPlaying": ["söndag", "torsdag"],
+            "childrenFriendly": "yes",
+            "year": "2021",
+            "time": ["15:00", "17:00", "19:00"],
+            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/fdf6066f28ec430a95d740acde091b87.jpg?width=1920&version=ABB3B02D83422384C8479A05FE0C8A14",
+            "video": "https://www.youtube.com/watch?v=_MwqiKD5srA",
+            "category": "children"
+        },
+        {
+            "id": 16,
+            "movieTitle": "Berts Dagbook",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923247/MoviePosters/Berts-dagbook_dj2lu4.jpg",
+            "description": "Det är Bert Ljungs och hans kompisar Åkes och Lill-Eriks första dag på högstadiet. Snart tar en pirrig historia fart genom en pinsam skoltemadag, rawfoodbollar, ett oförutsett toalettbesök och inte minst – två hemliga dagböcker.",
+            "descriptionEng":"It is Bert Ljungs and his friends Åkes and Lill-Erik's first day in high school. Soon, a tantalizing story takes off through an embarrassing school theme day, raw food balls, an unforeseen toilet visit and not least - two secret diaries.",
+            "daysPlaying": ["fredag", "tisdag", "söndag"],
+            "childrenFriendly": "yes",
+            "year": "2020",
+            "time": ["20:00", "22:00"],
+            "backgroundImg": "https://movietajm.se/wp-content/uploads/2020/11/wp-1606369919082.jpg",
+            "video": "https://www.youtube.com/watch?v=WH2pX1QPrb4",
+            "category": "children"
+        },
+        {
+            "id": 17,
+            "movieTitle": "Spring Uje Spring",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090975/MoviePosters/spring-uje-poster_mtjy01.jpg",
+            "description": "Uje, en popstjärna på 90-talet, får diagnosen Parkinsons. Det här är en film om hans kamp varje dag.",
+            "descriptionEng": "Uje, a pop star in the 90's, gets diagnosed with Parkinsons. This is a film about his every day struggles. ",
+            "daysPlaying": ["lördag", "onsdag", "fredag"],
+            "childrenFriendly": "no",
+            "year": "2020",
+            "time": ["18:00", "20:00"],
+            "backgroundImg": "https://gbg-film-festival-assets.s3-eu-west-1.amazonaws.com/48041_hero.jpg",
+            "video": "https://www.youtube.com/watch?v=OS8XI1zeWQM",
+            "category": "now"
+        },
+        {
+            "id": 18,
+            "movieTitle": "Tenet",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090975/MoviePosters/Tenet_ypsqdq.jpg",
+            "description": "Beväpnad med endast ett ord, Tenet, och kämpar för hela världens överlevnad, reser en huvudperson genom en skymningsvärld av internationell spionage på ett uppdrag som kommer att utvecklas i något bortom realtid.",
+            "descriptionEng": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+            "daysPlaying": ["söndag", "torsdag"],
+            "childrenFriendly": "no",
+            "year": "2020",
+            "time": ["15:00", "17:00", "19:00"],
+            "backgroundImg": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/08/bad5040f-b68d-4c45-bf31-3946e34ccede/1136_076_chl_176523.jpg",
+            "video": "https://www.youtube.com/watch?v=LdOM0x0XDMo",
+            "category": "now"
+        },
+        {
+            "id": 19,
+            "movieTitle": "Falling",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090974/MoviePosters/falling_s6wwxp.webp",
+            "description": "John Peterson bor med sin partner Eric och deras adopterade dotter i södra Kalifornien. När han besöks av sin åldrande far Willis från Los Angeles som letar efter en plats att gå i pension, kolliderar deras två mycket olika världar.",
+            "descriptionEng": "John Peterson lives with his partner Eric and their adopted daughter in Southern California. When he is visited by his aging father Willis from Los Angeles who is searching for a place to retire, their two very different worlds collide. ",
+            "daysPlaying": ["lördag", "onsdag", "fredag"],
+            "childrenFriendly": "no",
+            "year": "2021",
+            "time": ["17:30", "19:30"],
+            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/d34ea0a679864bdc9f943187e106cbeb.jpg?width=1920&version=AAC71F9FDCADD86525C60665834AAC26",
+            "video": "https://www.youtube.com/watch?v=yDw4g_BkPtY",
+            "category": "now"
+        },
+        {
+            "id": 20,
+            "movieTitle": "Sound of Metal",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090974/MoviePosters/sound-of-metal_b2lstr.jpg",
+            "description": "En tungmetalltrummis liv kastas i fritt fall när han börjar tappa hörseln.",
+            "descriptionEng": "A heavy-metal drummer's life is thrown into freefall when he begins to lose his hearing. ",
+            "daysPlaying": ["fredag"],
+            "childrenFriendly": "no",
+            "year": "2019",
+            "time": ["15:00", "17:00", "19:00"],
+            "backgroundImg": "https://m.media-amazon.com/images/M/MV5BYmRmZjdjY2QtNTlhYS00NDYzLThmMmEtMGM4ZDBjMDk5OGZhXkEyXkFqcGdeQXVyNzgxMzc3OTc@._V1_.jpg",
+            "video": "https://www.youtube.com/watch?v=VFOrGkAvjAE",
+            "category": "now"
+        },
+        {
+            "id": 21,
+            "movieTitle": "Penguin Bloom",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090974/MoviePosters/penguin-bloom-poster_tyntmx.jpg",
+            "description": "En familj tar emot en skadad skata som gör en stor skillnad i deras liv.",
+            "descriptionEng": "A family gets an injured magpie that makes a big difference in their lives.",
+            "daysPlaying": ["onsdag", "torsdag"],
+            "childrenFriendly": "yes",
+            "year": "2021",
+            "time": ["19:30"],
+            "backgroundImg": "https://img-www.tf-cdn.com/movie/2/penguin-bloom-2021.jpeg",
+            "video": "https://www.youtube.com/watch?v=lWs4AB04sUo",
+            "category": "now"
+        },
+        {
+            "id": 22,
+            "movieTitle": "Baby teeth",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090975/MoviePosters/babyteeth-movie-poster-2020-1000780238_rqjxtm.jpg",
+            "description": "När allvarligt sjuk tonåring Milla blir galet kär i smygdroghandlaren Moses är det hennes föräldrars värsta mardröm. Men när Millas första borste med kärlek ger henne en ny livslyst blir det rörigt och traditionell moral går ut genom fönstret.",
+            "descriptionEng": "When seriously ill teenager Milla falls madly in love with smalltime drug dealer Moses, it’s her parents’ worst nightmare. But as Milla’s first brush with love brings her a new lust for life, things get messy and traditional morals go out the window. ",
+            "daysPlaying": ["söndag", "måndag"],
+            "childrenFriendly": "no",
+            "year": "2020",
+            "time": ["20:30", "22:30"],
+            "backgroundImg": "https://a.ltrbxd.com/resized/sm/upload/ae/ii/c5/di/babyteeth-1200-1200-675-675-crop-000000.jpg?k=330c22556d",
+            "video": "https://www.youtube.com/watch?v=M6E8gPmz7n4",
+            "category": "now"
+        },
+        {
+            "id": 23,
+            "movieTitle": "Follow Me",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090974/MoviePosters/Follow_Me_utyrwn.jpg",
+            "description": "En social media-personlighet reser med sina vänner till Moskva för att fånga nytt innehåll för sin framgångsrika VLOG. Alltid driva gränserna och tillgodose en växande publik, de går in i en kall värld av mysterium, överdrift och fara.",
+            "descriptionEng": "A social media personality travels with his friends to Moscow to capture new content for his successful VLOG. Always pushing the limits and catering to a growing audience, they enter a cold world of mystery, excess, and danger. ",
+            "daysPlaying": ["lördag"],
+            "childrenFriendly": "no",
+            "year": "2020",
+            "time": ["18:30", "20:00"],
+            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/6be1dfb474394bda8ed00ea09e7b53fb.jpg?width=1920&version=0C575220632B3EF1B73DDE603E99C9E1",
+            "video": "https://www.youtube.com/watch?v=tiBE56vQ0Fg",
+            "category": "now"
+        },
+        {
+            "id": 24,
+            "movieTitle": "Freaky",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090974/MoviePosters/freaky_mazbo1.webp",
+            "description": "Efter att ha bytt kropp med en förvirrad seriemördare upptäcker en ung flicka i gymnasiet att hon har mindre än 24 timmar innan förändringen blir permanent.",
+            "descriptionEng": "After swapping bodies with a deranged serial killer, a young girl in high school discovers she has less than 24 hours before the change becomes permanent. ",
+            "daysPlaying": ["16:30"],
+            "childrenFriendly": "no",
+            "year": "2020",
+            "time": ["19:00", "20:00", "21:00"],
+            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/774e28b974964e78a61d8d414970fff4.jpg?width=1920&version=395BC648B8891FB09A1F7ABA449C4598",
+            "video": "https://www.youtube.com/watch?v=EqPnIcDW9g0",
+            "category": "now"
+        },
+        {
+            "id": 25,
+            "movieTitle": "Honest Thief",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1614090974/MoviePosters/honest-thief_i2vlt3.jpg",
+            "description": "En ökänd bankrånare som vill leva ett ärligt liv ger sig in, bara för att bli dubbelkorsad av två hänsynslösa FBI-agenter.",
+            "descriptionEng": "Wanting to lead an honest life, a notorious bank robber turns himself in, only to be double-crossed by two ruthless FBI agents. ",
+            "daysPlaying": ["18:00", "19:00"],
+            "childrenFriendly": "no",
+            "year": "2020",
+            "time": ["17:30", "21:00"],
+            "backgroundImg": "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/10/Honest-Thief-movie-poster-cropped.jpg",
+            "video": "https://www.youtube.com/watch?v=ZUIEOMOxIDo",
+            "category": "now"
         }
     ]
 }
