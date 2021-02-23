@@ -76,7 +76,7 @@
             "time": ["16:30", "18:30"],
             "backgroundImg": "https://i.insider.com/5f6c8482c4049200115cb52b?width=1200&format=jpeg",
             "video": "https://youtu.be/bLvqoHBptjg",
-            "category": ""
+            "category": "classic"
         },
         {
             "id": 7,
@@ -171,20 +171,6 @@
             "backgroundImg": "https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/378261/ee6831d42a85995a5f27a6b034f58b82-apstj_C3_A4rnan1.jpg",
             "video": "https://www.youtube.com/watch?v=AIdpa7V68Eo",
             "category": "children"
-        },
-        {
-            "id": 14,
-            "movieTitle": "Baby Bossen 2",
-            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923263/MoviePosters/baby-bossen-2_o7g24d.webp",
-            "description": "Bröderna Templeton har blivit vuxna och drivit ifrån varandra, men en ny chefsbebis med en banbrytande strategi håller på att föra dem ihop igen - och inspirera ett nytt familjeföretag.",
-            "descriptionEng": "The Templeton brothers have become adults and drifted away from each other, but a new boss baby with a cutting-edge approach is about to bring them together again - and inspire a new family business. ",
-            "daysPlaying": ["söndag", "tisdag"],
-            "childrenFriendly": "yes",
-            "year": "2020",
-            "time": ["17:30", "19:30"],
-            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/6b023f1314704d42bd2685e4db4e6276.jpg?width=1920&version=FF7A929D1F62DED21BE2D686F253EEFF",
-            "video": "https://www.youtube.com/watch?v=JEbrVpH8_4c",
-            "category": "children now"
         },
         {
             "id": 15,
@@ -339,6 +325,20 @@
             "backgroundImg": "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/10/Honest-Thief-movie-poster-cropped.jpg",
             "video": "https://www.youtube.com/watch?v=ZUIEOMOxIDo",
             "category": "now"
+        },
+        {
+            "id": 14,
+            "movieTitle": "Baby Bossen 2",
+            "img": "https://res.cloudinary.com/savely/image/upload/c_scale,h_572,w_400/v1613923263/MoviePosters/baby-bossen-2_o7g24d.webp",
+            "description": "Bröderna Templeton har blivit vuxna och drivit ifrån varandra, men en ny chefsbebis med en banbrytande strategi håller på att föra dem ihop igen - och inspirera ett nytt familjeföretag.",
+            "descriptionEng": "The Templeton brothers have become adults and drifted away from each other, but a new boss baby with a cutting-edge approach is about to bring them together again - and inspire a new family business. ",
+            "daysPlaying": ["söndag", "tisdag"],
+            "childrenFriendly": "yes",
+            "year": "2020",
+            "time": ["17:30", "19:30"],
+            "backgroundImg": "https://catalog.cinema-api.com/cf/images/ncg-images/6b023f1314704d42bd2685e4db4e6276.jpg?width=1920&version=FF7A929D1F62DED21BE2D686F253EEFF",
+            "video": "https://www.youtube.com/watch?v=JEbrVpH8_4c",
+            "category": "children now"
         }
     ]
 }

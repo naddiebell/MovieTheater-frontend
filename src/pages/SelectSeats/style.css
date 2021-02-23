@@ -33,7 +33,6 @@
 
 .receiptInfo {
   margin-left: 10rem;
-  margin-top: 4.2rem;
   max-width: 15%;
   background: rgb(224, 70, 101, .7);
   padding: 1rem;
@@ -52,4 +51,10 @@ h1 {
 
 .selectedMovie {
   margin-top: 2rem;
+}
+
+.seatsBackgroundDiv{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }

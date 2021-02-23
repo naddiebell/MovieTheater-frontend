@@ -36,7 +36,7 @@ export default function SelectSeats() {
   const displayedPrice = () => {
     const pris = indexes.length * 80;
     return `Pris är ${pris} kr`;
-  }
+  };
 
   const popCornEmoji = String.fromCodePoint(0x1f37f);
 
@@ -116,7 +116,6 @@ export default function SelectSeats() {
       ticket,
     });
 
-
     const session = res.data;
 
     const result = await stripe.redirectToCheckout({
@@ -131,81 +130,83 @@ export default function SelectSeats() {
   return (
     <>
       <h1>{t("Choose Seats")}</h1>
-      <div className="seatStyle">
-        <div className="receiptInfo">
-          <h3>Receipt Info</h3>
-          <p className="receiptText">{getSeats()}</p>
-          <p className="receiptText">Alla biljetter är 80 kr med moms</p>
-          <p className="receiptText selectedMovie">{state.ticket.filmTitle}</p>
-          <p className="receiptText">{state.ticket.date}</p>
-          <p className="receiptText">{displayedPrice()}</p>
+      <div className="seatsBackgroundDiv">
+        <div className="seatStyle">
+          <div className="receiptInfo">
+            <h3>Receipt Info</h3>
+            <p className="receiptText">{getSeats()}</p>
+            <p className="receiptText">Alla biljetter är 80 kr med moms</p>
+            <p className="receiptText selectedMovie">{state.ticket.filmTitle}</p>
+            <p className="receiptText">{state.ticket.date}</p>
+            <p className="receiptText">{displayedPrice()}</p>
+          </div>
+
+          <div className="seatsBackground">
+            <div className="screen">Screen</div>
+            <div className="board-row row1">
+              {renderSeat(0)}
+              {renderSeat(1)}
+              {renderSeat(2)}
+              {renderSeat(3)}
+              {renderSeat(4)}
+            </div>
+
+            <div className="board-row row2">
+              {renderSeat(5)}
+              {renderSeat(6)}
+              {renderSeat(7)}
+              {renderSeat(8)}
+              {renderSeat(9)}
+            </div>
+
+            <div className="board-row row3">
+              {renderSeat(10)}
+              {renderSeat(11)}
+              {renderSeat(12)}
+              {renderSeat(13)}
+              {renderSeat(14)}
+            </div>
+
+            <div className="board-row row4">
+              {renderSeat(15)}
+              {renderSeat(16)}
+              {renderSeat(17)}
+              {renderSeat(18)}
+              {renderSeat(19)}
+            </div>
+
+            <div className="board-row row5">
+              {renderSeat(20)}
+              {renderSeat(21)}
+              {renderSeat(22)}
+              {renderSeat(23)}
+              {renderSeat(24)}
+            </div>
+          </div>
+          <form className="formInfo">
+            <label htmlFor="userName">
+              <input
+                type="text"
+                id="userName"
+                name="userName"
+                placeholder="Name"
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="userEmail">
+              <input
+                type="text"
+                id="userEmail"
+                name="userEmail"
+                placeholder="Email"
+                onChange={handleChange}
+              />
+            </label>
+            <button type="button" onClick={handlePay} className="myButton">
+              {t("Pay")}
+            </button>
+          </form>
         </div>
-
-        <div className="seatsBackground">
-          <div className="screen">Screen</div>
-          <div className="board-row row1">
-            {renderSeat(0)}
-            {renderSeat(1)}
-            {renderSeat(2)}
-            {renderSeat(3)}
-            {renderSeat(4)}
-          </div>
-
-          <div className="board-row row2">
-            {renderSeat(5)}
-            {renderSeat(6)}
-            {renderSeat(7)}
-            {renderSeat(8)}
-            {renderSeat(9)}
-          </div>
-
-          <div className="board-row row3">
-            {renderSeat(10)}
-            {renderSeat(11)}
-            {renderSeat(12)}
-            {renderSeat(13)}
-            {renderSeat(14)}
-          </div>
-
-          <div className="board-row row4">
-            {renderSeat(15)}
-            {renderSeat(16)}
-            {renderSeat(17)}
-            {renderSeat(18)}
-            {renderSeat(19)}
-          </div>
-
-          <div className="board-row row5">
-            {renderSeat(20)}
-            {renderSeat(21)}
-            {renderSeat(22)}
-            {renderSeat(23)}
-            {renderSeat(24)}
-          </div>
-        </div>
-        <form className="formInfo">
-          <label htmlFor="userName">
-            <input
-              type="text"
-              id="userName"
-              name="userName"
-              placeholder="Name"
-              onChange={handleChange}
-            />
-          </label>
-          <label htmlFor="userEmail">
-            <input
-              type="text"
-              id="userEmail"
-              name="userEmail"
-              placeholder="Email"
-              onChange={handleChange}
-            />
-          </label>
-          <button type="button" onClick={handlePay} className="myButton">
-            {t("Pay")}
-          </button>
-        </form>
       </div>
     </>
   );
