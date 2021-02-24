@@ -1,25 +1,27 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+// import useState from "react"
+// import axios from "axios";
 import "./style.css";
 import { useTranslation } from "react-i18next";
 
-const emailjsId = process.env.REACT_APP_EMAILJS_ID;
-const baseUrl = process.env.REACT_APP_BACKEND_URL;
-const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-const emailJSApi = process.env.REACT_APP_EMAILJS_API;
-const templateId = process.env.REACT_APP_EJS_TEMPLATE_ID;
+// const emailjsId = process.env.REACT_APP_EMAILJS_ID;
+// const baseUrl = process.env.REACT_APP_BACKEND_URL;
+// const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+// const emailJSApi = process.env.REACT_APP_EMAILJS_API;
+// const templateId = process.env.REACT_APP_EJS_TEMPLATE_ID;
 
-function Success(props) {
-  const { ticketId, children } = props;
+function Success( ) {
+  //don't forget props
+  // const { ticketId, children } = props;
   // const [disabledBtn, setDisableBtn] = useState(false);
   const { t } = useTranslation();
 
-  const verifyPayment = async () => {
-    const res = await axios.put(
-      `${baseUrl}/api/v1/tickets/${ticketId}/validate`
-    );
-    return res.data;
-  };
+  // const verifyPayment = async () => {
+  //   const res = await axios.put(
+  //     `${baseUrl}/api/v1/tickets/${ticketId}/validate`
+  //   );
+  //   return res.data;
+  // };
 
   // const sendEmail = async () => {
   //   const ticketInfo = await verifyPayment();
@@ -49,7 +51,7 @@ function Success(props) {
 
   return (
     <>
-      {children}
+      {/* {children} */}
       <div>
         <p className="sendEmail">{t("Email Success")}</p>
         {/* <button
