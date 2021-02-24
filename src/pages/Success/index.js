@@ -41,25 +41,25 @@ function Success(props) {
     await axios.post(emailJSApi, emailData);
   };
 
-  const handleButton = (e) => {
-    e.preventDefault();
-    sendEmail();
-    setDisableBtn(true);
-  };
+  // const handleButton = (e) => {
+  //   e.preventDefault();
+  //   sendEmail();
+  //   setDisableBtn(true);
+  // };
 
   return (
     <>
       {children}
       <div>
         <p className="sendEmail">{t("Email Success")}</p>
-        <button
+        {/* <button
           type="button"
           className="myButton receptbtn"
           onClick={handleButton}
           disabled={disabledBtn}
         >
           {t("Send Email")}
-        </button>
+        </button> */}
       </div>
     </>
   );
