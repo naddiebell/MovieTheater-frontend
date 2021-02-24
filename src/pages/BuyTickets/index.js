@@ -16,7 +16,7 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 export default function BuyTickets(props) {
   const { t } = useTranslation();
-  const { state, dispatch } = useContext(AppContext); 
+  const { state, dispatch } = useContext(AppContext);
   const [ticketData, setTicketData] = useState({
     date: "",
     filmTitle: state.ticket.filmTitle,
@@ -59,13 +59,9 @@ export default function BuyTickets(props) {
   }, [dispatch, ticketData]);
 
   const handleButton = (aMovie) => {
-    if (date) {
       setTicketData({ ...ticketData, filmTitle: aMovie.movieTitle });
       navigate("/platser");
-    } else {
-      // eslint-disable-next-line no-alert
-      alert("Please select a movie and a date");
-    }
+    
   };
 
   const movieTitles = () => {
@@ -126,12 +122,25 @@ export default function BuyTickets(props) {
       );
     });
 
+    const datesAndMovies = aMovie.daysPlaying.map((movieTimesArr) => {
+      return (
+        <div className="datesAndMovies">
+          {movieTimesArr}
+          {timeButton}
+        </div>
+      )
+    })
+
     const dateSelected = () => {
-      console.log("amovie", aMovie.daysPlaying);
       if (aDate === "") {
-        return aMovie.daysPlaying.join(" ");
+        return datesAndMovies
       }
-      return aDate;
+      return (
+        <div>
+          {aDate}:
+          {timeButton}
+        </div>
+      )
     };
 
     return (
@@ -146,8 +155,8 @@ export default function BuyTickets(props) {
           </div>
           <div className="movieDetails">
             <h3 className="movieTitl">{aMovie.movieTitle}</h3>
-            <p>Datum: {dateSelected()} </p>
-            <p className="movieTimes">{timeButton}</p>
+            <div className="dateSelected"> {dateSelected()} </div>
+            {/* <p className="movieTimes">{timeButton}</p> */}
           </div>
         </div>
         <hr />
@@ -243,3 +252,9 @@ export default function BuyTickets(props) {
     </>
   );
 }
+
+
+// else {
+//        eslint-disable-next-line no-alert
+//       alert("Please select a movie and a date");
+//     }

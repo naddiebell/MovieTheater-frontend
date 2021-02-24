@@ -149,10 +149,3 @@ function MovieDetails(props) {
 }
 
 export default MovieDetails;
-
-/*
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zn_qirpdBag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-*/
-/* <div className="movieCarDiv">
-        <MovieCarousel className="carImages" movies={movies} showText="false"/>
-      </div> */
